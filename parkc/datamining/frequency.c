@@ -1,6 +1,6 @@
 #include "frequency.h"
 
-static int hash_ngram(const char* text, int start, char length) {
+int hash_ngram(const char* text, int start, char length) {
     double hash_value = 0;
     for (int i = 0; i < length; i++) {
         hash_value += pow(ALPHABET_LENGTH, length - i - 1) * (text[start + i] - 'a');
@@ -24,8 +24,9 @@ static int* letters_freq(const char* text) {
     return freq;
 }
 
-static double* parse_line(char* line) {
-    double* freq = (double*) safe_malloc(sizeof(double) * ALPHABET_LENGTH);
+static double* parse_line(char* line, int length) {
+    int arlength = (int)pow(ALPHABET_LENGTH, length);
+    double* freq = array(double, arlength);
     char* pch;
     int i = 0;
     for (pch = strtok(line, " "); pch != NULL; pch = strtok (NULL, " ")) {
@@ -57,10 +58,16 @@ double* ngrams_freq(const char* text, char n) {
     return freq;
 }
 
-double* load_frequencies(const char* lang) {
+double** load_frequencies(const char* lang) {
     char* path = frequencies_file(lang);
     char* content = read_file(path);
-    double* result = parse_line(content);
+    double** result = array(double*, 2);
+    char* temp[2];
+    temp[0] = strtok(content, "\n");
+    temp[1] = strtok(NULL, "\n");
+    for (int i = 0; i < 2; i++) {
+        result[i] = parse_line(temp[i], i + 1);
+    }
     free(path);
     free(content);
     return result;

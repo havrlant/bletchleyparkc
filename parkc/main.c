@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include "ciphers/caesar.h"
 #include "utilities/constants.h"
 #include "datamining/frequency.h"
@@ -8,9 +9,9 @@
 
 int main()
 {
-    double* freq = ngrams_freq("aaabbbcccd", 1);
-    for (int i = 0; i < ALPHABET_LENGTH; i++) {
-        printf("%g ", freq[i]);
+    double** freq = load_frequencies("cs");
+    for (int i = 0; i < pow(ALPHABET_LENGTH, 2); i++) {
+        printf("%g ", freq[1][i]);
     }
     return 0;
 }

@@ -3,6 +3,9 @@
 
 #include <stdlib.h>
 #include "osext.h"
+
 #define zero_array(type, length) (type*)safe_calloc((size_t)(length), sizeof(type));
+
+#define array(type, length) (type*)safe_malloc(sizeof(type) * (length));
 
 #endif
