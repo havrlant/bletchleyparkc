@@ -14,6 +14,14 @@ char* replace_chars(const char* text, const char* table) {
     return newtext;
 }
 
+void replace_chars_par(const char* text, const char* table, char* newtext) {
+    size_t i;
+    for (i = 0; text[i]; ++i) {
+        newtext[i] = table[text[i] - 'a'];
+    }
+    newtext[i] = '\0';
+}
+
 char* concat(const char* s1, const char* s2) {
     size_t len1 = strlen(s1);
     size_t len2 = strlen(s2);

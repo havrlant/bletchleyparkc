@@ -11,6 +11,7 @@ typedef struct {
 } StringArray;
 
 char* replace_chars(const char*, const char*);
+void replace_chars_par(const char*, const char*, char*);
 char* empty_string(size_t);
 char* concat(const char*, const char*);
 int char_count(const char*, char);

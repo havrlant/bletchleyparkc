@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12EE38118B91D040029BBF5 /* statistics.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38018B91D040029BBF5 /* statistics.c */; };
 		E190764018B8ACF00082E443 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E190763E18B8ACF00082E443 /* main.c */; };
 		E190767418B8BD920082E443 /* frequency.c in Sources */ = {isa = PBXBuildFile; fileRef = E190767018B8BD920082E443 /* frequency.c */; };
 		E190767518B8BD920082E443 /* topwords.c in Sources */ = {isa = PBXBuildFile; fileRef = E190767218B8BD920082E443 /* topwords.c */; };
@@ -34,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E12EE38018B91D040029BBF5 /* statistics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = statistics.c; sourceTree = "<group>"; };
+		E12EE38218B91D130029BBF5 /* statitics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statitics.h; sourceTree = "<group>"; };
 		E156574018B8F54700415902 /* vigenere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vigenere.h; sourceTree = "<group>"; };
 		E156574118B8F55D00415902 /* substitution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = substitution.h; sourceTree = "<group>"; };
 		E156574218B8F58000415902 /* arrayext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrayext.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				E190767218B8BD920082E443 /* topwords.c */,
 				E171DE5618B8F2F000881B43 /* frequency.h */,
 				E171DE5718B8F32400881B43 /* topwords.h */,
+				E12EE38018B91D040029BBF5 /* statistics.c */,
+				E12EE38218B91D130029BBF5 /* statitics.h */,
 			);
 			path = datamining;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				E190768518B8BD990082E443 /* ospath.c in Sources */,
 				E190768218B8BD990082E443 /* constants.c in Sources */,
 				E190768618B8BD990082E443 /* stringext.c in Sources */,
+				E12EE38118B91D040029BBF5 /* statistics.c in Sources */,
 				E190768E18B8BD9F0082E443 /* substitution.c in Sources */,
 				E190767418B8BD920082E443 /* frequency.c in Sources */,
 				E190768D18B8BD9F0082E443 /* caesar.c in Sources */,
