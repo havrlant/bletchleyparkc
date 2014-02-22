@@ -24,8 +24,8 @@ char* concat(const char* s1, const char* s2) {
 }
 
 int char_count(const char* text, char character) {
-    int i, count = 0;
-    for (i = 0; text[i] != '\0'; i++) {
+    int count = 0;
+    for (int i = 0; text[i] != '\0'; i++) {
         if (text[i] == character) {
             count++;
         }

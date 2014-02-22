@@ -3,8 +3,7 @@
 static char* make_caesar_table(char key) {
     char* table = (char*) safe_malloc(sizeof(char) * ALPHABET_LENGTH);
     int temp;
-    int i;
-    for (i = 0; i < ALPHABET_LENGTH; ++i) {
+    for (int i = 0; i < ALPHABET_LENGTH; ++i) {
         temp = (int)key + i;
         table[i] = (char)(temp <= (int)'z' ? temp : temp - ALPHABET_LENGTH);
     }
@@ -14,8 +13,7 @@ static char* make_caesar_table(char key) {
 static char* make_caesar_dec_table(char key) {
     char* table = (char*) safe_malloc(sizeof(char) * ALPHABET_LENGTH);
     int temp;
-    int i;
-    for (i = 0; i < ALPHABET_LENGTH; ++i) {
+    for (int i = 0; i < ALPHABET_LENGTH; ++i) {
         temp = 2 * (int)'a' + i - (int)key;
         table[i] = (char)(temp >= (int)'a' ? temp : temp + ALPHABET_LENGTH);
     }

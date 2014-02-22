@@ -2,8 +2,7 @@
 
 static char* switch_key(const char* key) {
     char* newkey = empty_string(ALPHABET_LENGTH);
-    int i;
-    for (i = 0; i < ALPHABET_LENGTH; i++) {
+    for (int i = 0; i < ALPHABET_LENGTH; i++) {
         newkey[key[i] - 'a'] = 'a' + i;
     }
     return newkey;

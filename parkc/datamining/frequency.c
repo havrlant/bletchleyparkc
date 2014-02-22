@@ -2,8 +2,7 @@
 
 static int hash_ngram(const char* text, int start, char length) {
     double hash_value = 0;
-    int i;
-    for (i = 0; i < length; i++) {
+    for (int i = 0; i < length; i++) {
         hash_value += pow(ALPHABET_LENGTH, length - i - 1) * (text[start + i] - 'a');
     }
     return (int)hash_value;
@@ -11,8 +10,7 @@ static int hash_ngram(const char* text, int start, char length) {
 
 static int* _ngrams_freq(const char* text, char n) {
     int* freq = zero_array(int, pow(ALPHABET_LENGTH, n));
-    int i;
-    for (i = 0; text[i] != '\0'; i++) {
+    for (int i = 0; text[i] != '\0'; i++) {
         freq[hash_ngram(text, i, n)]++;
     }
     return freq;
@@ -20,8 +18,7 @@ static int* _ngrams_freq(const char* text, char n) {
 
 static int* letters_freq(const char* text) {
     int* freq = zero_array(int, ALPHABET_LENGTH);
-    int i;
-    for (i = 0; text[i] != '\0'; i++) {
+    for (int i = 0; text[i] != '\0'; i++) {
         freq[(int)(text[i] - 'a')]++;
     }
     return freq;
@@ -53,8 +50,7 @@ double* ngrams_freq(const char* text, char n) {
     int* ocurences = ngrams_ocur(text, n);
     int ngrams_count = (int)pow(ALPHABET_LENGTH, n);
     double* freq = zero_array(double, ngrams_count);
-    int i;
-    for (i = 0; i < ngrams_count; i++) {
+    for (int i = 0; i < ngrams_count; i++) {
         freq[i] = ocurences[i] / text_length;
     }
     free(ocurences);
