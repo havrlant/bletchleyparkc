@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E12EE38118B91D040029BBF5 /* statistics.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38018B91D040029BBF5 /* statistics.c */; };
+		E12EE38518B942760029BBF5 /* ciphers_generators.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38418B942760029BBF5 /* ciphers_generators.c */; };
+		E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38718B948270029BBF5 /* caesar_brute.c */; };
 		E190764018B8ACF00082E443 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E190763E18B8ACF00082E443 /* main.c */; };
 		E190767418B8BD920082E443 /* frequency.c in Sources */ = {isa = PBXBuildFile; fileRef = E190767018B8BD920082E443 /* frequency.c */; };
 		E190767518B8BD920082E443 /* topwords.c in Sources */ = {isa = PBXBuildFile; fileRef = E190767218B8BD920082E443 /* topwords.c */; };
@@ -37,6 +39,10 @@
 /* Begin PBXFileReference section */
 		E12EE38018B91D040029BBF5 /* statistics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = statistics.c; sourceTree = "<group>"; };
 		E12EE38218B91D130029BBF5 /* statitics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statitics.h; sourceTree = "<group>"; };
+		E12EE38418B942760029BBF5 /* ciphers_generators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ciphers_generators.c; sourceTree = "<group>"; };
+		E12EE38618B942860029BBF5 /* ciphers_generators.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ciphers_generators.h; sourceTree = "<group>"; };
+		E12EE38718B948270029BBF5 /* caesar_brute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = caesar_brute.c; sourceTree = "<group>"; };
+		E12EE38918B948300029BBF5 /* caesar_brute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = caesar_brute.h; sourceTree = "<group>"; };
 		E156574018B8F54700415902 /* vigenere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vigenere.h; sourceTree = "<group>"; };
 		E156574118B8F55D00415902 /* substitution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = substitution.h; sourceTree = "<group>"; };
 		E156574218B8F58000415902 /* arrayext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrayext.h; sourceTree = "<group>"; };
@@ -75,6 +81,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E12EE38318B923D60029BBF5 /* cryptanalysis */ = {
+			isa = PBXGroup;
+			children = (
+				E12EE38418B942760029BBF5 /* ciphers_generators.c */,
+				E12EE38618B942860029BBF5 /* ciphers_generators.h */,
+				E12EE38718B948270029BBF5 /* caesar_brute.c */,
+				E12EE38918B948300029BBF5 /* caesar_brute.h */,
+			);
+			path = cryptanalysis;
+			sourceTree = "<group>";
+		};
 		E190766D18B8BD1F0082E443 /* ciphers */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +156,7 @@
 		E193DE8C18B1181B004A5EF4 /* parkc */ = {
 			isa = PBXGroup;
 			children = (
+				E12EE38318B923D60029BBF5 /* cryptanalysis */,
 				E190766F18B8BD7E0082E443 /* datamining */,
 				E190766E18B8BD3E0082E443 /* utilities */,
 				E190766D18B8BD1F0082E443 /* ciphers */,
@@ -201,10 +219,12 @@
 			files = (
 				E190768F18B8BD9F0082E443 /* vigenere.c in Sources */,
 				E190768518B8BD990082E443 /* ospath.c in Sources */,
+				E12EE38518B942760029BBF5 /* ciphers_generators.c in Sources */,
 				E190768218B8BD990082E443 /* constants.c in Sources */,
 				E190768618B8BD990082E443 /* stringext.c in Sources */,
 				E12EE38118B91D040029BBF5 /* statistics.c in Sources */,
 				E190768E18B8BD9F0082E443 /* substitution.c in Sources */,
+				E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */,
 				E190767418B8BD920082E443 /* frequency.c in Sources */,
 				E190768D18B8BD9F0082E443 /* caesar.c in Sources */,
 				E190767518B8BD920082E443 /* topwords.c in Sources */,

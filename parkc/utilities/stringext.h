@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "osext.h"
 
 typedef struct {
@@ -16,5 +17,6 @@ char* empty_string(size_t);
 char* concat(const char*, const char*);
 int char_count(const char*, char);
 StringArray* create_string_array(int);
+char* normalize(const char*);
 
 #endif

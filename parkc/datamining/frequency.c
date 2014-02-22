@@ -52,7 +52,7 @@ double* ngrams_freq(const char* text, char n) {
     int ngrams_count = (int)pow(ALPHABET_LENGTH, n);
     double* freq = zero_array(double, ngrams_count);
     for (int i = 0; i < ngrams_count; i++) {
-        freq[i] = ocurences[i] / text_length;
+        freq[i] = (ocurences[i] / text_length) * 100;
     }
     free(ocurences);
     return freq;

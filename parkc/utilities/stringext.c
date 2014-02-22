@@ -46,3 +46,20 @@ StringArray* create_string_array(int length) {
     sarray->length = length;
     return sarray;
 }
+
+char* normalize(const char* text) {
+    char* newtext;
+    int counter = 0, j = 0;
+    for (size_t i = 0; text[i] != '\0'; i++) {
+        if (isalpha(text[i])) {
+            counter++;
+        }
+    }
+    newtext = empty_string(counter);
+    for (size_t i = 0; text[i] != '\0'; i++) {
+        if (isalnum(text[i])) {
+            newtext[j++] = tolower(text[i]);
+        }
+    }
+    return newtext;
+}
