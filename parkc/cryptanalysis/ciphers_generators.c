@@ -9,7 +9,9 @@ static Ciphertext *caesar_generator() {
     }
     char *key = empty_string(1);
     key[0] = counter + 'a';
-    caesar_decrypt_par(caesar_text, 'b', caesar_text);
+    if (counter > 0) {
+        caesar_decrypt_par(caesar_text, 'b', caesar_text);
+    }
     Ciphertext* ctext = (Ciphertext*) malloc(sizeof(Ciphertext));
     ctext->text = caesar_text;
     ctext->key = key;

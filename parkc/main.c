@@ -9,24 +9,17 @@
 #include "datamining/topwords.h"
 #include "datamining/statitics.h"
 #include "cryptanalysis/ciphers_generators.h"
+#include "cryptanalysis/caesar_brute.h"
 
 int main()
 {
-//    char *text = normalize("Ja, Syn Poklopu, rozzuren do silenstvi, vodarnu srovnam se zemi, jmenem mistru kanvodstvi. Ja, matku vlastni, vsak kdo vi zda, prokouknutou mel, nikoliv jak pribuzni. ");
-//    double** freq = load_frequencies("cs");
-//    StringArray *topwords = load_topwords("cs");
-//    LangStats *stats = create_stats(freq, topwords);
-//    char key;
-//    for (size_t i = 0; i < ALPHABET_LENGTH; i++) {
-//        key = 'a' + i;
-//        printf("%c: %g\n", key, similarity(caesar_encrypt(text, key), stats));
-//    }
-    char* text = "abcdef";
-    TextGenerator generator = get_caesar_generator(text);
-    Ciphertext* ctext = generator();
-    while (ctext != NULL) {
-        printf("%s\n", ctext->text);
-        ctext = generator();
-    }
+    char *text = normalize("Ja, Syn Poklopu, rozzuren do silenstvi, vodarnu srovnam se zemi, jmenem mistru kanvodstvi. Ja, matku vlastni, vsak kdo vi zda, prokouknutou mel, nikoliv jak pribuzni. ");
+    double** freq = load_frequencies("cs");
+    StringArray *topwords = load_topwords("cs");
+    LangStats *stats = create_stats(freq, topwords);
+    
+    Ciphertext* ctext = caesar_crack(caesar_encrypt(text, 'f'), stats);
+    printf("Proomeny klic: %s\n", ctext->key);
+    
     return 0;
 }
