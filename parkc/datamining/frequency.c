@@ -1,6 +1,6 @@
 #include "frequency.h"
 
-int hash_ngram(const char* text, int start, char length) {
+static int hash_ngram(const char* text, int start, char length) {
     double hash_value = 0;
     for (int i = 0; i < length; i++) {
         hash_value += pow(ALPHABET_LENGTH, length - i - 1) * (text[start + i] - 'a');

@@ -14,6 +14,5 @@
 int* ngrams_ocur(const char*, char);
 double* ngrams_freq(const char*, char);
 double** load_frequencies(const char*);
-int hash_ngram(const char* text, int start, char length);
 
 #endif
