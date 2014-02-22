@@ -4,6 +4,6 @@
 #include "ciphers_generators.h"
 #include "../datamining/statitics.h"
 
-Ciphertext* caesar_crack(const char*, LangStats*);
+Keytext* caesar_crack(const char*, LangStats*);
 
 #endif

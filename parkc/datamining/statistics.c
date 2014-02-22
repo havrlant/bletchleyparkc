@@ -28,15 +28,17 @@ LangStats *create_stats(double** ngrams, StringArray *topwords) {
     return stats;
 }
 
-Ciphertext *best_match(Ciphertext* (*generator)(), LangStats *stats) {
-    Ciphertext *temp, *result = NULL;
+Keytext *best_match(TextGenerator generate, LangStats *stats) {
+    Keytext *temp, *result = NULL;
     double sim = -1, tempsim;
-    for (temp = generator(); temp != NULL; temp = generator()) {
+    for (temp = generate(); temp != NULL; temp = generate()) {
         tempsim = similarity(temp->text, stats);
         if (sim == -1 || tempsim < sim) {
             result = temp;
             sim = tempsim;
+            free(temp->key);
         } else {
+            free(temp->key);
             free(temp);
         }
     }

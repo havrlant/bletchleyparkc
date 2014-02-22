@@ -11,9 +11,9 @@
 typedef struct {
     char* text;
     char* key;
-} Ciphertext;
+} Keytext;
 
-typedef Ciphertext* (*TextGenerator)();
+typedef Keytext* (*TextGenerator)();
 
 TextGenerator get_caesar_generator(const char*);
 

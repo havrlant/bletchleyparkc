@@ -15,5 +15,5 @@ typedef struct {
 double deviation(double*, double*, size_t);
 double similarity(char*, LangStats*);
 LangStats* create_stats(double**, StringArray*);
-Ciphertext *best_match(Ciphertext* (*generator)(), LangStats*);
+Keytext *best_match(Keytext* (*generate)(), LangStats*);
 #endif

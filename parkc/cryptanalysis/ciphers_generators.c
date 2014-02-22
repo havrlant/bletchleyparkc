@@ -2,7 +2,7 @@
 
 char *caesar_text;
 
-static Ciphertext *caesar_generator() {
+static Keytext *caesar_generator() {
     static int counter = 0;
     if (counter == ALPHABET_LENGTH) {
         return NULL;
@@ -12,11 +12,11 @@ static Ciphertext *caesar_generator() {
     if (counter > 0) {
         caesar_decrypt_par(caesar_text, 'b', caesar_text);
     }
-    Ciphertext* ctext = (Ciphertext*) malloc(sizeof(Ciphertext));
-    ctext->text = caesar_text;
-    ctext->key = key;
+    Keytext* keytext = (Keytext*) malloc(sizeof(Keytext));
+    keytext->text = caesar_text;
+    keytext->key = key;
     counter++;
-    return ctext;
+    return keytext;
 }
 
 TextGenerator get_caesar_generator(const char* text) {
