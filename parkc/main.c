@@ -1,18 +1,16 @@
-//
-//  main.c
-//  parkc
-//
-//  Created by Lukáš Havrlant on 16.2.14.
-//  Copyright (c) 2014 Lukáš Havrlant. All rights reserved.
-//
-
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "ciphers/caesar.h"
+#include "utilities/constants.h"
+#include "datamining/frequency.h"
+#include "datamining/topwords.h"
 
-int main(int argc, const char * argv[])
+int main()
 {
-
-    // insert code here...
-    printf("Hello, World!\n");
+    StringArray* words = load_topwords("cs");
+    for (int i = 0; i < words->length; i++) {
+        printf("%s ", words->items[i]);
+    }
     return 0;
 }
-
