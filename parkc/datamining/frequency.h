@@ -10,8 +10,9 @@
 #include "../utilities/constants.h"
 #include "../utilities/arrayext.h"
 #include "../utilities/constants.h"
-int* ngrams_freq(const char*, char);
-double* load_frequencies(const char*);
 
+int* ngrams_ocur(const char*, char);
+double* ngrams_freq(const char*, char);
+double* load_frequencies(const char*);
 
 #endif

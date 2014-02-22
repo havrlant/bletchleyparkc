@@ -8,7 +8,9 @@
 
 int main()
 {
-    double* freq = load_frequencies("cs");
-    printf("%g\n", freq[0]);
+    double* freq = ngrams_freq("aaabbbcccd", 1);
+    for (int i = 0; i < ALPHABET_LENGTH; i++) {
+        printf("%g ", freq[i]);
+    }
     return 0;
 }

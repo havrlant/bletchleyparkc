@@ -10,7 +10,7 @@ static int hash_ngram(const char* text, int start, char length) {
 }
 
 static int* _ngrams_freq(const char* text, char n) {
-    int* freq = zero_array((size_t)pow(ALPHABET_LENGTH, n)); 
+    int* freq = zero_array(int, pow(ALPHABET_LENGTH, n));
     int i;
     for (i = 0; text[i] != '\0'; i++) {
         freq[hash_ngram(text, i, n)]++;
@@ -19,23 +19,12 @@ static int* _ngrams_freq(const char* text, char n) {
 }
 
 static int* letters_freq(const char* text) {
-    int* freq = zero_array(ALPHABET_LENGTH);
+    int* freq = zero_array(int, ALPHABET_LENGTH);
     int i;
     for (i = 0; text[i] != '\0'; i++) {
         freq[(int)(text[i] - 'a')]++;
     }
     return freq;
-}
-
-int* ngrams_freq(const char* text, char n) {
-    int max_n = 4;
-    if (n == 1) {
-        return letters_freq(text);
-    } else if (n >= 1 && n <= max_n) {
-        return _ngrams_freq(text, n);
-    } 
-    fprintf(stderr, "Illegal argument value. n = %i, should be 1 <= n <= %i", n, max_n);
-    exit(EXIT_FAILURE);    
 }
 
 static double* parse_line(char* line) {
@@ -45,6 +34,30 @@ static double* parse_line(char* line) {
     for (pch = strtok(line, " "); pch != NULL; pch = strtok (NULL, " ")) {
         freq[i++] = atof(pch);
     }
+    return freq;
+}
+
+int* ngrams_ocur(const char* text, char n) {
+    int max_n = 3;
+    if (n == 1) {
+        return letters_freq(text);
+    } else if (n >= 1 && n <= max_n) {
+        return _ngrams_freq(text, n);
+    } 
+    fprintf(stderr, "Illegal argument value. n = %i, should be 1 <= n <= %i", n, max_n);
+    exit(EXIT_FAILURE);    
+}
+
+double* ngrams_freq(const char* text, char n) {
+    double text_length = (double)strlen(text);
+    int* ocurences = ngrams_ocur(text, n);
+    int ngrams_count = (int)pow(ALPHABET_LENGTH, n);
+    double* freq = zero_array(double, ngrams_count);
+    int i;
+    for (i = 0; i < ngrams_count; i++) {
+        freq[i] = ocurences[i] / text_length;
+    }
+    free(ocurences);
     return freq;
 }
 
