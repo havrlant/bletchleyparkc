@@ -19,7 +19,7 @@ int main()
     LangStats *stats = create_stats(freq, topwords);
     
     Keytext* ctext = caesar_crack(caesar_encrypt(text, 'f'), stats);
-    printf("Proomeny klic: %s\n", ctext->key);
+    printf("Pouzity klic: %s\n", ctext->key);
     
     return 0;
 }

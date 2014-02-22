@@ -1,6 +1,6 @@
 #include "ciphers_generators.h"
 
-char *caesar_text;
+static char *caesar_text;
 
 static Keytext *caesar_generator() {
     static int counter = 0;

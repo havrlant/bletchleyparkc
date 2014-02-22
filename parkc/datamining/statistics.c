@@ -34,9 +34,12 @@ Keytext *best_match(TextGenerator generate, LangStats *stats) {
     for (temp = generate(); temp != NULL; temp = generate()) {
         tempsim = similarity(temp->text, stats);
         if (sim == -1 || tempsim < sim) {
+            if (result != NULL) {
+                free(result->key);
+            }
+            free(result);
             result = temp;
             sim = tempsim;
-            free(temp->key);
         } else {
             free(temp->key);
             free(temp);
