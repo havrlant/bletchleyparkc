@@ -1,5 +1,6 @@
-#ifndef TOPWORDS_H
-#define TOPWORDS_H
+#ifndef parkc_topwords_h
+#define parkc_topwords_h
+
 #include <string.h>
 #include "stdlib.h"
 #include "../utilities/stringext.h"
@@ -9,4 +10,5 @@
 
 StringArray* load_topwords(const char*);
 int words_occurences(StringArray*, char*);
+
 #endif

@@ -34,29 +34,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E156574018B8F54700415902 /* vigenere.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vigenere.h; sourceTree = "<group>"; };
+		E156574118B8F55D00415902 /* substitution.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = substitution.h; sourceTree = "<group>"; };
+		E156574218B8F58000415902 /* arrayext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arrayext.h; sourceTree = "<group>"; };
+		E156574318B8F5BD00415902 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		E156574418B8F5DA00415902 /* stringext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stringext.h; sourceTree = "<group>"; };
+		E156574518B8F60600415902 /* osext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = osext.h; sourceTree = "<group>"; };
+		E156574618B8F61B00415902 /* ospath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ospath.h; sourceTree = "<group>"; };
+		E171DE5618B8F2F000881B43 /* frequency.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = frequency.h; sourceTree = "<group>"; };
+		E171DE5718B8F32400881B43 /* topwords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = topwords.h; sourceTree = "<group>"; };
+		E171DE5818B8F34400881B43 /* caesar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = caesar.h; sourceTree = "<group>"; };
 		E190763E18B8ACF00082E443 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		E190763F18B8ACF00082E443 /* main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = main.h; sourceTree = "<group>"; };
 		E190767018B8BD920082E443 /* frequency.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = frequency.c; sourceTree = "<group>"; };
-		E190767118B8BD920082E443 /* frequency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = frequency.h; sourceTree = "<group>"; };
 		E190767218B8BD920082E443 /* topwords.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = topwords.c; sourceTree = "<group>"; };
-		E190767318B8BD920082E443 /* topwords.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = topwords.h; sourceTree = "<group>"; };
 		E190767618B8BD990082E443 /* arrayext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arrayext.c; sourceTree = "<group>"; };
-		E190767718B8BD990082E443 /* arrayext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arrayext.h; sourceTree = "<group>"; };
 		E190767818B8BD990082E443 /* constants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = constants.c; sourceTree = "<group>"; };
-		E190767918B8BD990082E443 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		E190767A18B8BD990082E443 /* files.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = files.c; sourceTree = "<group>"; };
 		E190767B18B8BD990082E443 /* osext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = osext.c; sourceTree = "<group>"; };
-		E190767C18B8BD990082E443 /* osext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = osext.h; sourceTree = "<group>"; };
 		E190767D18B8BD990082E443 /* ospath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ospath.c; sourceTree = "<group>"; };
-		E190767E18B8BD990082E443 /* ospath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ospath.h; sourceTree = "<group>"; };
 		E190767F18B8BD990082E443 /* stringext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stringext.c; sourceTree = "<group>"; };
-		E190768018B8BD990082E443 /* stringext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stringext.h; sourceTree = "<group>"; };
 		E190768718B8BD9F0082E443 /* caesar.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = caesar.c; sourceTree = "<group>"; };
-		E190768818B8BD9F0082E443 /* caesar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = caesar.h; sourceTree = "<group>"; };
 		E190768918B8BD9F0082E443 /* substitution.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = substitution.c; sourceTree = "<group>"; };
-		E190768A18B8BD9F0082E443 /* substitution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = substitution.h; sourceTree = "<group>"; };
 		E190768B18B8BD9F0082E443 /* vigenere.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vigenere.c; sourceTree = "<group>"; };
-		E190768C18B8BD9F0082E443 /* vigenere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vigenere.h; sourceTree = "<group>"; };
 		E190769018B8BDBF0082E443 /* files.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = files.h; sourceTree = "<group>"; };
 		E193DE8A18B1181B004A5EF4 /* parkc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = parkc; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,11 +76,11 @@
 			isa = PBXGroup;
 			children = (
 				E190768718B8BD9F0082E443 /* caesar.c */,
-				E190768818B8BD9F0082E443 /* caesar.h */,
 				E190768918B8BD9F0082E443 /* substitution.c */,
-				E190768A18B8BD9F0082E443 /* substitution.h */,
 				E190768B18B8BD9F0082E443 /* vigenere.c */,
-				E190768C18B8BD9F0082E443 /* vigenere.h */,
+				E171DE5818B8F34400881B43 /* caesar.h */,
+				E156574018B8F54700415902 /* vigenere.h */,
+				E156574118B8F55D00415902 /* substitution.h */,
 			);
 			path = ciphers;
 			sourceTree = "<group>";
@@ -89,17 +89,17 @@
 			isa = PBXGroup;
 			children = (
 				E190767618B8BD990082E443 /* arrayext.c */,
-				E190767718B8BD990082E443 /* arrayext.h */,
 				E190767818B8BD990082E443 /* constants.c */,
-				E190767918B8BD990082E443 /* constants.h */,
 				E190767A18B8BD990082E443 /* files.c */,
 				E190767B18B8BD990082E443 /* osext.c */,
-				E190767C18B8BD990082E443 /* osext.h */,
 				E190767D18B8BD990082E443 /* ospath.c */,
-				E190767E18B8BD990082E443 /* ospath.h */,
 				E190767F18B8BD990082E443 /* stringext.c */,
-				E190768018B8BD990082E443 /* stringext.h */,
 				E190769018B8BDBF0082E443 /* files.h */,
+				E156574218B8F58000415902 /* arrayext.h */,
+				E156574318B8F5BD00415902 /* constants.h */,
+				E156574418B8F5DA00415902 /* stringext.h */,
+				E156574518B8F60600415902 /* osext.h */,
+				E156574618B8F61B00415902 /* ospath.h */,
 			);
 			path = utilities;
 			sourceTree = "<group>";
@@ -108,9 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				E190767018B8BD920082E443 /* frequency.c */,
-				E190767118B8BD920082E443 /* frequency.h */,
 				E190767218B8BD920082E443 /* topwords.c */,
-				E190767318B8BD920082E443 /* topwords.h */,
+				E171DE5618B8F2F000881B43 /* frequency.h */,
+				E171DE5718B8F32400881B43 /* topwords.h */,
 			);
 			path = datamining;
 			sourceTree = "<group>";

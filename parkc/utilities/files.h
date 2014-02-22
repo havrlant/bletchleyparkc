@@ -1,11 +1,3 @@
-//
-//  files.h
-//  parkc
-//
-//  Created by Lukáš Havrlant on 22.2.14.
-//  Copyright (c) 2014 Lukáš Havrlant. All rights reserved.
-//
-
 #ifndef parkc_files_h
 #define parkc_files_h
 

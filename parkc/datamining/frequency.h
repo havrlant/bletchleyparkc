@@ -1,4 +1,7 @@
-//#include <stdlib.h>
+#ifndef parkc_frequency_h
+#define parkc_frequency_h
+
+#include <stdlib.h>
 #include <math.h>
 #include <string.h>
 #include "../utilities/files.h"
@@ -9,3 +12,6 @@
 #include "../utilities/constants.h"
 int* ngrams_freq(const char*, char);
 double* load_frequencies(const char*);
+
+
+#endif
