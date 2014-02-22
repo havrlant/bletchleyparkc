@@ -9,7 +9,6 @@ static int hash_ngram(const char* text, int start, char length) {
     return (int)hash_value;
 }
 
-
 static int* _ngrams_freq(const char* text, char n) {
     int* freq = zero_array((size_t)pow(ALPHABET_LENGTH, n)); 
     int i;
