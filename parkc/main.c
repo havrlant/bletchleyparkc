@@ -8,9 +8,7 @@
 
 int main()
 {
-    StringArray* words = load_topwords("cs");
-    for (int i = 0; i < words->length; i++) {
-        printf("%s ", words->items[i]);
-    }
+    double* freq = load_frequencies("cs");
+    printf("%g\n", freq[0]);
     return 0;
 }

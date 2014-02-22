@@ -12,7 +12,7 @@ StringArray* load_topwords(const char* lang) {
         sarray->items[i++] = pch;
     }
     free(path);
-    // content cannot be freed, because of strtok
+    // 'content' cannot be freed, because of strtok
     return sarray;
 }
 

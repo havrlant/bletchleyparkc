@@ -39,16 +39,21 @@ int* ngrams_freq(const char* text, char n) {
     exit(EXIT_FAILURE);    
 }
 
-double* load_frequencies(const char* lang) {
-    char* path = frequencies_file(lang);
+static double* parse_line(char* line) {
     double* freq = (double*) safe_malloc(sizeof(double) * ALPHABET_LENGTH);
-    char* content = read_file(path);
     char* pch;
     int i = 0;
-    for (pch = strtok(content, " "); pch != NULL; pch = strtok (NULL, " ")) {
+    for (pch = strtok(line, " "); pch != NULL; pch = strtok (NULL, " ")) {
         freq[i++] = atof(pch);
     }
+    return freq;
+}
+
+double* load_frequencies(const char* lang) {
+    char* path = frequencies_file(lang);
+    char* content = read_file(path);
+    double* result = parse_line(content);
     free(path);
     free(content);
-    return freq;
+    return result;
 }
