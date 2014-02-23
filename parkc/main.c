@@ -18,7 +18,7 @@ int main()
     StringArray *topwords = load_topwords("cs");
     LangStats *stats = create_stats(freq, topwords);
     
-    Keytext* ctext = caesar_crack(caesar_encrypt(text, 'f'), stats);
+    Keytext* ctext = caesar_crack(caesar_encrypt(text, 'a'), stats);
     printf("Pouzity klic: %s\n", ctext->key);
     
     return 0;

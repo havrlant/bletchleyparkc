@@ -24,6 +24,16 @@
 		E190768F18B8BD9F0082E443 /* vigenere.c in Sources */ = {isa = PBXBuildFile; fileRef = E190768B18B8BD9F0082E443 /* vigenere.c */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E102CFBA18BA334800813519 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E193DE8218B1181B004A5EF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E193DE8918B1181B004A5EF4;
+			remoteInfo = parkc;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		E193DE8818B1181B004A5EF4 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -37,6 +47,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E102CFAD18BA334800813519 /* parkc Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "parkc Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12EE38018B91D040029BBF5 /* statistics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = statistics.c; sourceTree = "<group>"; };
 		E12EE38218B91D130029BBF5 /* statitics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statitics.h; sourceTree = "<group>"; };
 		E12EE38418B942760029BBF5 /* ciphers_generators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ciphers_generators.c; sourceTree = "<group>"; };
@@ -71,6 +82,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E102CFAA18BA334800813519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E193DE8718B1181B004A5EF4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				E193DE8A18B1181B004A5EF4 /* parkc */,
+				E102CFAD18BA334800813519 /* parkc Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,6 +188,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E102CFAC18BA334800813519 /* parkc Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E102CFBE18BA334800813519 /* Build configuration list for PBXNativeTarget "parkc Tests" */;
+			buildPhases = (
+				E102CFA918BA334800813519 /* Sources */,
+				E102CFAA18BA334800813519 /* Frameworks */,
+				E102CFAB18BA334800813519 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E102CFBB18BA334800813519 /* PBXTargetDependency */,
+			);
+			name = "parkc Tests";
+			productName = "parkc Tests";
+			productReference = E102CFAD18BA334800813519 /* parkc Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		E193DE8918B1181B004A5EF4 /* parkc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E193DE9318B1181B004A5EF4 /* Build configuration list for PBXNativeTarget "parkc" */;
@@ -194,6 +231,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Lukáš Havrlant";
+				TargetAttributes = {
+					E102CFAC18BA334800813519 = {
+						TestTargetID = E193DE8918B1181B004A5EF4;
+					};
+				};
 			};
 			buildConfigurationList = E193DE8518B1181B004A5EF4 /* Build configuration list for PBXProject "parkc" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -208,11 +250,29 @@
 			projectRoot = "";
 			targets = (
 				E193DE8918B1181B004A5EF4 /* parkc */,
+				E102CFAC18BA334800813519 /* parkc Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		E102CFAB18BA334800813519 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		E102CFA918BA334800813519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E193DE8618B1181B004A5EF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,7 +297,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		E102CFBB18BA334800813519 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E193DE8918B1181B004A5EF4 /* parkc */;
+			targetProxy = E102CFBA18BA334800813519 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		E102CFBC18BA334800813519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "parkc Tests/parkc Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "parkc Tests/parkc Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E102CFBD18BA334800813519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "parkc Tests/parkc Tests-Prefix.pch";
+				INFOPLIST_FILE = "parkc Tests/parkc Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		E193DE9118B1181B004A5EF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -323,6 +425,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E102CFBE18BA334800813519 /* Build configuration list for PBXNativeTarget "parkc Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E102CFBC18BA334800813519 /* Debug */,
+				E102CFBD18BA334800813519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E193DE8518B1181B004A5EF4 /* Build configuration list for PBXProject "parkc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
