@@ -7,6 +7,6 @@
 #include "../ciphers/vigenere.h"
 #include "../ciphers/substitution.h"
 
-char *all_caesar_tests();
+char *all_ciphers_tests();
 
 #endif

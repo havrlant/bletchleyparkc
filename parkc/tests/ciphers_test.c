@@ -28,7 +28,7 @@ static void test_substitution_decrypt() {
     str_assert("vsudedobradomanejlepe", substitution_decrypt("blsntnxadcnxocftpytkt", "camntwqzipryofxkhdlusbevjg"));
 }
 
-char *all_caesar_tests() {
+char *all_ciphers_tests() {
     test_caesar_encrypt();
     test_caesar_decrypt();
     test_vigenere_encrypt();
