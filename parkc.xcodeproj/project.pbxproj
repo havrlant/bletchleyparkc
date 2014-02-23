@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E102CFC218BA388400813519 /* ciphers_test.c in Sources */ = {isa = PBXBuildFile; fileRef = E102CFC118BA388400813519 /* ciphers_test.c */; };
+		E102CFC718BA3C2000813519 /* run_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = E102CFC618BA3C2000813519 /* run_tests.c */; };
+		E102CFCC18BA45B900813519 /* unittest.c in Sources */ = {isa = PBXBuildFile; fileRef = E102CFCB18BA45B900813519 /* unittest.c */; };
 		E12EE38118B91D040029BBF5 /* statistics.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38018B91D040029BBF5 /* statistics.c */; };
 		E12EE38518B942760029BBF5 /* ciphers_generators.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38418B942760029BBF5 /* ciphers_generators.c */; };
 		E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38718B948270029BBF5 /* caesar_brute.c */; };
@@ -48,6 +51,12 @@
 
 /* Begin PBXFileReference section */
 		E102CFAD18BA334800813519 /* parkc Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "parkc Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E102CFC118BA388400813519 /* ciphers_test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ciphers_test.c; sourceTree = "<group>"; };
+		E102CFC418BA38CA00813519 /* ciphers_test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ciphers_test.h; sourceTree = "<group>"; };
+		E102CFC618BA3C2000813519 /* run_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = run_tests.c; sourceTree = "<group>"; };
+		E102CFC818BA3C2C00813519 /* run_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = run_tests.h; sourceTree = "<group>"; };
+		E102CFCA18BA459400813519 /* unittest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unittest.h; sourceTree = "<group>"; };
+		E102CFCB18BA45B900813519 /* unittest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unittest.c; sourceTree = "<group>"; };
 		E12EE38018B91D040029BBF5 /* statistics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = statistics.c; sourceTree = "<group>"; };
 		E12EE38218B91D130029BBF5 /* statitics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statitics.h; sourceTree = "<group>"; };
 		E12EE38418B942760029BBF5 /* ciphers_generators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ciphers_generators.c; sourceTree = "<group>"; };
@@ -99,6 +108,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E102CFBF18BA37B900813519 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				E102CFC118BA388400813519 /* ciphers_test.c */,
+				E102CFC418BA38CA00813519 /* ciphers_test.h */,
+				E102CFC618BA3C2000813519 /* run_tests.c */,
+				E102CFC818BA3C2C00813519 /* run_tests.h */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		E102CFC918BA454C00813519 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				E102CFCA18BA459400813519 /* unittest.h */,
+				E102CFCB18BA45B900813519 /* unittest.c */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		E12EE38318B923D60029BBF5 /* cryptanalysis */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +204,8 @@
 		E193DE8C18B1181B004A5EF4 /* parkc */ = {
 			isa = PBXGroup;
 			children = (
+				E102CFC918BA454C00813519 /* lib */,
+				E102CFBF18BA37B900813519 /* tests */,
 				E12EE38318B923D60029BBF5 /* cryptanalysis */,
 				E190766F18B8BD7E0082E443 /* datamining */,
 				E190766E18B8BD3E0082E443 /* utilities */,
@@ -288,9 +319,12 @@
 				E190767418B8BD920082E443 /* frequency.c in Sources */,
 				E190768D18B8BD9F0082E443 /* caesar.c in Sources */,
 				E190767518B8BD920082E443 /* topwords.c in Sources */,
+				E102CFCC18BA45B900813519 /* unittest.c in Sources */,
 				E190768418B8BD990082E443 /* osext.c in Sources */,
+				E102CFC218BA388400813519 /* ciphers_test.c in Sources */,
 				E190768318B8BD990082E443 /* files.c in Sources */,
 				E190764018B8ACF00082E443 /* main.c in Sources */,
+				E102CFC718BA3C2000813519 /* run_tests.c in Sources */,
 				E190768118B8BD990082E443 /* arrayext.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
