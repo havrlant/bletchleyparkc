@@ -22,6 +22,22 @@ extern int _total_errors;
     }\
 } while(0)
 
+#define assert_array_eq(expected, actual, length, type) do {\
+    type* _actual = (actual);\
+    type* _expected = (expected);\
+    _total_tests++;\
+    for(size_t _i = 0; _i < length; _i++) {\
+        if (_expected[_i] != _actual[_i]) {\
+            _total_errors++;\
+            if (strcmp(#type, "int") == 0) {\
+                printf("Test failed. Array %s at index %zu: %i, expected: %i\n", #actual, _i, _actual[_i], _expected[_i]);\
+            } else {\
+                printf("Test failed. Array %s at index %zu: %g, expected: %g\n", #actual, _i, (double)_actual[_i], (double)_expected[_i]);\
+            }\
+        }\
+    }\
+} while(0);
+
 #define assert_str(expected, actual) do {\
     char* _actual = (actual);\
     char* _expected = (expected);\

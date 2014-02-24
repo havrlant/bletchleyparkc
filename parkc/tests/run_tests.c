@@ -3,6 +3,7 @@
 void run_all_tests() {
     all_ciphers_tests();
     all_utilities_tests();
+    all_datamining_tests();
     if (_total_errors == 0) {
         printf("ALL %i TESTS PASSED!\n", _total_tests);
     } else {
