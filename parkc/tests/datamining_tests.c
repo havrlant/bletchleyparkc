@@ -22,7 +22,16 @@ static void test_ngrams_freq() {
     assert_array_eq(expected3, ngrams_freq("aaab", 1), ALPHABET_LENGTH, double);
 }
 
+static void test_word_ocurences() {
+    StringArray* sarray = create_string_array(3);
+    sarray->items = (char*[]){"ha", "Python", "Ruby"};
+    assert_eq(3, words_occurences(sarray, "Python is better than Ruby! Hahaha!"));
+    assert_eq(1, words_occurences(sarray, "Python forever."));
+    assert_eq(0, words_occurences(sarray, "Scala is also pretty damn good."));
+}
+
 void all_datamining_tests() {
     test_ngrams_ocur();
     test_ngrams_freq();
+    test_word_ocurences();
 }

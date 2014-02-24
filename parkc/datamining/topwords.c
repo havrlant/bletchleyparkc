@@ -16,7 +16,7 @@ StringArray* load_topwords(const char* lang) {
     return sarray;
 }
 
-int words_occurences(StringArray* sarray, char* text) {
+int words_occurences(StringArray* sarray, const char* text) {
     int counter = 0;
     for (int i = 0; i < sarray->length; i++) {
         if (strstr(text, sarray->items[i]) != NULL) {

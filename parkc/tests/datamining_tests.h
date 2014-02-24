@@ -6,6 +6,7 @@
 #include "../datamining/topwords.h"
 #include "../datamining/statitics.h"
 #include "../utilities/constants.h"
+#include "../utilities/stringext.h"
 
 void all_datamining_tests();
 

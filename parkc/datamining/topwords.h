@@ -9,6 +9,6 @@
 #include "../utilities/osext.h"
 
 StringArray* load_topwords(const char*);
-int words_occurences(StringArray*, char*);
+int words_occurences(StringArray*, const char*);
 
 #endif
