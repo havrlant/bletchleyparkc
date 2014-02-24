@@ -8,11 +8,11 @@ double deviation(double* arr1, double* arr2, size_t length) {
     return deviation;
 }
 
-double similarity(char* text, LangStats* stats) {
+double similarity(char* text, LangStats* stats, int ngrams_count) {
     double sim = 0;
     double dev;
     double *freq;
-    for (int i = 0; i < NGRAMS_COUNT; i++) {
+    for (int i = 0; i < ngrams_count; i++) {
         freq = ngrams_freq(text, i + 1);
         dev = deviation(freq, stats->ngrams[i], pow(ALPHABET_LENGTH, i + 1));
         sim += (dev / (i + 1));
@@ -28,11 +28,11 @@ LangStats *create_stats(double** ngrams, StringArray *topwords) {
     return stats;
 }
 
-Keytext *best_match(TextGenerator generate, LangStats *stats) {
+Keytext *best_match(TextGenerator generate, LangStats *stats, int ngrams_count) {
     Keytext *temp, *result = NULL;
     double sim = -1, tempsim;
     for (temp = generate(); temp != NULL; temp = generate()) {
-        tempsim = similarity(temp->text, stats);
+        tempsim = similarity(temp->text, stats, ngrams_count);
         if (sim == -1 || tempsim < sim) {
             if (result != NULL) {
                 free(result->key);

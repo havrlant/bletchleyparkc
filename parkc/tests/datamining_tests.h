@@ -1,6 +1,7 @@
 #ifndef parkc_datamining_tests_h
 #define parkc_datamining_tests_h
 
+#include <math.h>
 #include "../lib/unittest.h"
 #include "../datamining/frequency.h"
 #include "../datamining/topwords.h"

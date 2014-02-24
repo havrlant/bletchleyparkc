@@ -27,6 +27,7 @@
 		E190768E18B8BD9F0082E443 /* substitution.c in Sources */ = {isa = PBXBuildFile; fileRef = E190768918B8BD9F0082E443 /* substitution.c */; };
 		E190768F18B8BD9F0082E443 /* vigenere.c in Sources */ = {isa = PBXBuildFile; fileRef = E190768B18B8BD9F0082E443 /* vigenere.c */; };
 		E1DF85DF18BBDA200049654A /* datamining_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85DE18BBDA200049654A /* datamining_tests.c */; };
+		E1DF85E218BBF3610049654A /* cryptanalysis.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85E118BBF3610049654A /* cryptanalysis.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		E193DE8A18B1181B004A5EF4 /* parkc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = parkc; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1DF85DE18BBDA200049654A /* datamining_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = datamining_tests.c; sourceTree = "<group>"; };
 		E1DF85E018BBDA380049654A /* datamining_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datamining_tests.h; sourceTree = "<group>"; };
+		E1DF85E118BBF3610049654A /* cryptanalysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cryptanalysis.c; sourceTree = "<group>"; };
+		E1DF85E318BBF36B0049654A /* cryptanalysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cryptanalysis.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,8 @@
 				E102CFCF18BBD3BE00813519 /* utilities_tests.h */,
 				E1DF85DE18BBDA200049654A /* datamining_tests.c */,
 				E1DF85E018BBDA380049654A /* datamining_tests.h */,
+				E1DF85E118BBF3610049654A /* cryptanalysis.c */,
+				E1DF85E318BBF36B0049654A /* cryptanalysis.h */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 				E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */,
 				E190767418B8BD920082E443 /* frequency.c in Sources */,
 				E190768D18B8BD9F0082E443 /* caesar.c in Sources */,
+				E1DF85E218BBF3610049654A /* cryptanalysis.c in Sources */,
 				E190767518B8BD920082E443 /* topwords.c in Sources */,
 				E102CFCC18BA45B900813519 /* unittest.c in Sources */,
 				E190768418B8BD990082E443 /* osext.c in Sources */,

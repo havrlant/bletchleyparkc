@@ -13,7 +13,7 @@ typedef struct {
 } LangStats;
 
 double deviation(double*, double*, size_t);
-double similarity(char*, LangStats*);
+double similarity(char*, LangStats*, int);
 LangStats* create_stats(double**, StringArray*);
-Keytext *best_match(Keytext* (*generate)(), LangStats*);
+Keytext *best_match(Keytext* (*generate)(), LangStats*, int);
 #endif

@@ -30,6 +30,7 @@ extern int _total_errors;
         if (_expected[_i] != _actual[_i]) {\
             _total_errors++;\
             printf("Test failed. Array %s at index %zu: %g, expected: %g\n", #actual, _i, (double)_actual[_i], (double)_expected[_i]);\
+            break;\
         }\
     }\
 } while(0);
