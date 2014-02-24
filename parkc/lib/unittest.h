@@ -29,11 +29,7 @@ extern int _total_errors;
     for(size_t _i = 0; _i < length; _i++) {\
         if (_expected[_i] != _actual[_i]) {\
             _total_errors++;\
-            if (strcmp(#type, "int") == 0) {\
-                printf("Test failed. Array %s at index %zu: %i, expected: %i\n", #actual, _i, _actual[_i], _expected[_i]);\
-            } else {\
-                printf("Test failed. Array %s at index %zu: %g, expected: %g\n", #actual, _i, (double)_actual[_i], (double)_expected[_i]);\
-            }\
+            printf("Test failed. Array %s at index %zu: %g, expected: %g\n", #actual, _i, (double)_actual[_i], (double)_expected[_i]);\
         }\
     }\
 } while(0);
