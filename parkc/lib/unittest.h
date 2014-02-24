@@ -14,7 +14,15 @@ extern int _total_errors;
     }\
 } while (0)
 
-#define str_assert(expected, actual) do {\
+#define assert_eq(expected, actual) do {\
+    _total_tests++;\
+    if ((expected) != (actual)) {\
+        _total_errors++;\
+        printf("Test failed. %s != %s\n", #expected, #actual);\
+    }\
+} while(0)
+
+#define assert_str(expected, actual) do {\
     char* _actual = (actual);\
     char* _expected = (expected);\
     _total_tests++;\
