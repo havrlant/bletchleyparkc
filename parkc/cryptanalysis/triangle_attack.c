@@ -61,23 +61,26 @@ static int next_distance(LetterFreq *lc, int number) {
     return distance;
 }
 
-Keytext *triangle_attack(const char *ciphertext, const LangStats *stats, int bound, int ngrams_count) {
-    char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
-    int index = 0;
-    LetterFreq *lf_ciphertext = get_letters_occurences(ciphertext);
-    LetterFreq *lf_language = freq_to_map(stats->ngrams[0]);
-    order_letters(lf_language);
-    int lang_diff = lang_distances(lf_language);
+void find_keys(LetterFreq *lfc, LetterFreq *lfl, char *keys, int lang_diff, int bound) {
     char key;
+    int index = 0;
     for (int i = 0; i < pow(bound, 3); i++) {
-        if (next_distance(lf_ciphertext, bound) == lang_diff) {
-            key = lf_ciphertext[i / (int)pow(bound, 2)].letter;
-            key = key - lf_language[0].letter + 'a';
+        if (next_distance(lfc, bound) == lang_diff) {
+            key = lfc[i / (int)pow(bound, 2)].letter;
+            key = key - lfl[0].letter + 'a';
             key = key >= 'a' ? key : key + ALPHABET_LENGTH;
             keys[index++] = key;
         }
     }
-    
+}
+
+Keytext *triangle_attack(const char *ciphertext, const LangStats *stats, int bound, int ngrams_count) {
+    char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
+    LetterFreq *lf_ciphertext = get_letters_occurences(ciphertext);
+    LetterFreq *lf_language = freq_to_map(stats->ngrams[0]);
+    order_letters(lf_language);
+    int lang_diff = lang_distances(lf_language);
+    find_keys(lf_ciphertext, lf_language, keys, lang_diff, bound);
     TextGenerator generator = get_triangle_generator(ciphertext, keys);
     Keytext *keytext = best_match(generator, stats, ngrams_count);
     free(keys);
