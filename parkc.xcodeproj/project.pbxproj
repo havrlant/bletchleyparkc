@@ -29,6 +29,7 @@
 		E1DF85DF18BBDA200049654A /* datamining_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85DE18BBDA200049654A /* datamining_tests.c */; };
 		E1DF85E218BBF3610049654A /* cryptanalysis.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85E118BBF3610049654A /* cryptanalysis.c */; };
 		E1FC9DD518BC026C00B20411 /* triangle_attack.c in Sources */ = {isa = PBXBuildFile; fileRef = E1FC9DD418BC026C00B20411 /* triangle_attack.c */; };
+		E1FC9DD818BCDC5200B20411 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = E1FC9DD718BCDC5200B20411 /* utils.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,8 @@
 		E1DF85E318BBF36B0049654A /* cryptanalysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cryptanalysis.h; sourceTree = "<group>"; };
 		E1FC9DD418BC026C00B20411 /* triangle_attack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triangle_attack.c; sourceTree = "<group>"; };
 		E1FC9DD618BC027900B20411 /* triangle_attack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangle_attack.h; sourceTree = "<group>"; };
+		E1FC9DD718BCDC5200B20411 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
+		E1FC9DD918BCDC6700B20411 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 				E1DF85E018BBDA380049654A /* datamining_tests.h */,
 				E1DF85E118BBF3610049654A /* cryptanalysis.c */,
 				E1DF85E318BBF36B0049654A /* cryptanalysis.h */,
+				E1FC9DD718BCDC5200B20411 /* utils.c */,
+				E1FC9DD918BCDC6700B20411 /* utils.h */,
 			);
 			path = tests;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				E1DF85DF18BBDA200049654A /* datamining_tests.c in Sources */,
 				E102CFC218BA388400813519 /* ciphers_test.c in Sources */,
 				E190768318B8BD990082E443 /* files.c in Sources */,
+				E1FC9DD818BCDC5200B20411 /* utils.c in Sources */,
 				E190764018B8ACF00082E443 /* main.c in Sources */,
 				E102CFC718BA3C2000813519 /* run_tests.c in Sources */,
 				E190768118B8BD990082E443 /* arrayext.c in Sources */,
