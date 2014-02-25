@@ -7,8 +7,8 @@
 #include "../utilities/constants.h"
 #include "../utilities/osext.h"
 
-void caesar_encrypt_par(const char*, const char*, char*);
-void caesar_decrypt_par(const char*, const char*, char*);
+char *caesar_encrypt_par(const char*, const char*, char*);
+char *caesar_decrypt_par(const char*, const char*, char*);
 char *caesar_encrypt(const char*, const char*);
 char *caesar_decrypt(const char*, const char*);
 

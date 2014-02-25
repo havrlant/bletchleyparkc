@@ -10,19 +10,28 @@ static char decrypt_char(char letter, char key) {
     return temp >= 'a' ? temp : temp + (char)ALPHABET_LENGTH;
 }
 
-static char* vigenere(const char* opentext, const char* key, char (*shift)(char, char)) {
-    char* ciphertext = empty_string(strlen(opentext));
+static char* vigenere(const char* opentext, const char* key, char (*shift)(char, char), char* text) {
     size_t keylen = strlen(key);
     for (size_t i = 0; opentext[i] != '\0'; i++) {
-        ciphertext[i] = shift(opentext[i], key[i % keylen]);
+        text[i] = shift(opentext[i], key[i % keylen]);
     }
-    return ciphertext;
+    return text;
+}
+
+char* vigenere_encrypt_par(const char *opentext, const char *key, char *ciphertext) {
+    return vigenere(opentext, key, encrypt_char, ciphertext);
+}
+
+char* vigenere_decrypt_par(const char *opentext, const char *key, char *ciphertext) {
+    return vigenere(opentext, key, decrypt_char, ciphertext);
 }
 
 char* vigenere_encrypt(const char* opentext, const char* key) {
-    return vigenere(opentext, key, encrypt_char);
+    char* text = empty_string(strlen(opentext));
+    return vigenere_encrypt_par(opentext, key, text);
 }
 
-char* vigenere_decrypt(const char* ciphertext, const char* key) {
-    return vigenere(ciphertext, key, decrypt_char);
+char* vigenere_decrypt(const char* opentext, const char* key) {
+    char* text = empty_string(strlen(opentext));
+    return vigenere_decrypt_par(opentext, key, text);
 }

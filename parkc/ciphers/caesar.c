@@ -20,26 +20,26 @@ static char *make_caesar_dec_table(char key) {
     return table;
 }
 
-void caesar_encrypt_par(const char *opentext, const char *key, char *ciphertext) {
+char *caesar_encrypt_par(const char *opentext, const char *key, char *ciphertext) {
     char *table = make_caesar_table(key[0]);
     replace_chars_par(opentext, table, ciphertext);
     free(table);
+    return ciphertext;
 }
 
-void caesar_decrypt_par(const char *ciphertext, const char *key, char *opentext) {
+char *caesar_decrypt_par(const char *ciphertext, const char *key, char *opentext) {
     char *table = make_caesar_dec_table(key[0]);
     replace_chars_par(ciphertext, table, opentext);
     free(table);
+    return opentext;
 }
 
 char *caesar_encrypt(const char *opentext, const char *key) {
     char *ciphertext = (char*) safe_malloc(sizeof(char) * (strlen(opentext) + 1));
-    caesar_encrypt_par(opentext, key, ciphertext);
-    return ciphertext;
+    return caesar_encrypt_par(opentext, key, ciphertext);
 }
 
 char *caesar_decrypt(const char *ciphertext, const char *key) {
     char *opentext = (char*) safe_malloc(sizeof(char) * (strlen(ciphertext) + 1));
-    caesar_decrypt_par(ciphertext, key, opentext);
-    return opentext;
+    return caesar_decrypt_par(ciphertext, key, opentext);
 }
