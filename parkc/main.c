@@ -11,21 +11,35 @@
 #include "cryptanalysis/ciphers_generators.h"
 #include "cryptanalysis/caesar_brute.h"
 #include "tests/run_tests.h"
+#include "cryptanalysis/triangle_attack.h"
 
-int main(int argc, char *argv[])
-{
+
+char* ciphertext = "ijezycluijydkiutuijudodqplhqtbusxfeluijdosxichjyphqtskjqtojutaedsyfeibutdyaheaoteifydoijefudosxzuxelyijkpuliusxijhqdlqbyiucqioletoteijhutksuhduilqjodufqdqpubupdufuabefbqcudk";
+
+char* opentext = "stojimvestinusedestenynazvradlechpovestnychsmrtizradcutadytedkonciposlednikrokydospinystopenychjehovistuzevsechstranvalisemasyvodydostreducernesvatynepanazeleznepekloplamenu";
+
+static int run_test(int argc, char *argv[]) {
     if (argc > 1) {
         if (strcmp("--test", argv[1]) == 0) {
             run_all_tests();
+            return 1;
         }
     }
-//    char *text = normalize("Ja, Syn Poklopu, rozzuren do silenstvi, vodarnu srovnam se zemi, jmenem mistru kanvodstvi. Ja, matku vlastni, vsak kdo vi zda, prokouknutou mel, nikoliv jak pribuzni. ");
-//    double** freq = load_frequencies("cs");
-//    StringArray *topwords = load_topwords("cs");
-//    LangStats *stats = create_stats(freq, topwords);
-//    
-//    Keytext* ctext = caesar_crack(caesar_encrypt(text, 'a'), stats);
-//    printf("Pouzity klic: %s\n", ctext->key);
+    return 0;
+}
+
+int main(int argc, char *argv[]) {
+    if (!run_test(argc, argv)) {
+        LangStats* stats = default_stats("cs");
+//        LetterFreq* lf = freq_to_map(ngrams_freq(opentext, 1));
+//        LetterFreq* lf = freq_to_map(stats->ngrams[0]);
+//        for (int i = 0; i < ALPHABET_LENGTH; i++) {
+//            printf("%c: %g\n", lf[i].letter, lf[i].freq);
+//        }
+//        printf("%s", caesar_decrypt(ciphertext, 'q'));
+        Keytext* ktext = triangle_attack(ciphertext, stats, 6);
+        printf("Uhodnuty klic: %s\n", ktext->key);
+    }
     
     printf("Done.\n");
     return 0;

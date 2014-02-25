@@ -35,7 +35,7 @@ static double* parse_line(char* line, int length) {
     return freq;
 }
 
-int* ngrams_ocur(const char* text, char n) {
+int* ngrams_occur(const char* text, char n) {
     int max_n = 3;
     if (n == 1) {
         return letters_freq(text);
@@ -48,7 +48,7 @@ int* ngrams_ocur(const char* text, char n) {
 
 double* ngrams_freq(const char* text, char n) {
     double text_length = (double)strlen(text);
-    int* ocurences = ngrams_ocur(text, n);
+    int* ocurences = ngrams_occur(text, n);
     int ngrams_count = (int)pow(ALPHABET_LENGTH, n);
     double* freq = zero_array(double, ngrams_count);
     for (int i = 0; i < ngrams_count; i++) {

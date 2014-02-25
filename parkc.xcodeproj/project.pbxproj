@@ -28,6 +28,7 @@
 		E190768F18B8BD9F0082E443 /* vigenere.c in Sources */ = {isa = PBXBuildFile; fileRef = E190768B18B8BD9F0082E443 /* vigenere.c */; };
 		E1DF85DF18BBDA200049654A /* datamining_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85DE18BBDA200049654A /* datamining_tests.c */; };
 		E1DF85E218BBF3610049654A /* cryptanalysis.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85E118BBF3610049654A /* cryptanalysis.c */; };
+		E1FC9DD518BC026C00B20411 /* triangle_attack.c in Sources */ = {isa = PBXBuildFile; fileRef = E1FC9DD418BC026C00B20411 /* triangle_attack.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		E1DF85E018BBDA380049654A /* datamining_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datamining_tests.h; sourceTree = "<group>"; };
 		E1DF85E118BBF3610049654A /* cryptanalysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cryptanalysis.c; sourceTree = "<group>"; };
 		E1DF85E318BBF36B0049654A /* cryptanalysis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cryptanalysis.h; sourceTree = "<group>"; };
+		E1FC9DD418BC026C00B20411 /* triangle_attack.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = triangle_attack.c; sourceTree = "<group>"; };
+		E1FC9DD618BC027900B20411 /* triangle_attack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangle_attack.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				E12EE38618B942860029BBF5 /* ciphers_generators.h */,
 				E12EE38718B948270029BBF5 /* caesar_brute.c */,
 				E12EE38918B948300029BBF5 /* caesar_brute.h */,
+				E1FC9DD418BC026C00B20411 /* triangle_attack.c */,
+				E1FC9DD618BC027900B20411 /* triangle_attack.h */,
 			);
 			path = cryptanalysis;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				E190768618B8BD990082E443 /* stringext.c in Sources */,
 				E12EE38118B91D040029BBF5 /* statistics.c in Sources */,
 				E190768E18B8BD9F0082E443 /* substitution.c in Sources */,
+				E1FC9DD518BC026C00B20411 /* triangle_attack.c in Sources */,
 				E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */,
 				E190767418B8BD920082E443 /* frequency.c in Sources */,
 				E190768D18B8BD9F0082E443 /* caesar.c in Sources */,

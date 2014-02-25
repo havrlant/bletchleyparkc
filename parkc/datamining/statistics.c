@@ -28,6 +28,13 @@ LangStats *create_stats(double** ngrams, StringArray *topwords) {
     return stats;
 }
 
+LangStats *default_stats(const char *lang) {
+    double** ngrams = load_frequencies(lang);
+    StringArray *topwords = load_topwords(lang);
+    return create_stats(ngrams, topwords);
+    
+}
+
 Keytext *best_match(TextGenerator generate, LangStats *stats, int ngrams_count) {
     Keytext *temp, *result = NULL;
     double sim = -1, tempsim;

@@ -4,7 +4,9 @@
 #include <stdlib.h>
 #include <math.h>
 #include "../utilities/constants.h"
+#include "../utilities/osext.h"
 #include "frequency.h"
+#include "topwords.h"
 #include "../cryptanalysis/ciphers_generators.h"
 
 typedef struct {
@@ -16,4 +18,5 @@ double deviation(double*, double*, size_t);
 double similarity(char*, LangStats*, int);
 LangStats* create_stats(double**, StringArray*);
 Keytext *best_match(Keytext* (*generate)(), LangStats*, int);
+LangStats *default_stats(const char*);
 #endif

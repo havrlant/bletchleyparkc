@@ -16,5 +16,6 @@ typedef struct {
 typedef Keytext* (*TextGenerator)();
 
 TextGenerator get_caesar_generator(const char*);
+TextGenerator get_triangle_generator(const char*, const char*);
 
 #endif

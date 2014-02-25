@@ -2,10 +2,10 @@
 
 static void test_ngrams_ocur() {
     int length = ALPHABET_LENGTH;
-    assert_array_eq(((int[26]){3, 2, 1}), ngrams_ocur("aaabbc", 1), length, int);
-    assert_array_eq(((int[26]){0}), ngrams_ocur("", 1), length, int);
-    assert_array_eq(((int[26*26]){2, 1}), ngrams_ocur("aaab", 2), length * length, int);
-    assert_array_eq(((int[26*26]){3}), ngrams_ocur("aaaa", 2), length * length, int);
+    assert_array_eq(((int[26]){3, 2, 1}), ngrams_occur("aaabbc", 1), length, int);
+    assert_array_eq(((int[26]){0}), ngrams_occur("", 1), length, int);
+    assert_array_eq(((int[26*26]){2, 1}), ngrams_occur("aaab", 2), length * length, int);
+    assert_array_eq(((int[26*26]){3}), ngrams_occur("aaaa", 2), length * length, int);
 }
 
 static void test_ngrams_freq() {
