@@ -37,7 +37,7 @@ int main(int argc, char *argv[]) {
 //            printf("%c: %g\n", lf[i].letter, lf[i].freq);
 //        }
 //        printf("%s", caesar_decrypt(ciphertext, 'q'));
-        Keytext* ktext = triangle_attack(ciphertext, stats, 6);
+        Keytext* ktext = triangle_attack(ciphertext, stats, 6, 2);
         printf("Uhodnuty klic: %s\n", ktext->key);
     }
     

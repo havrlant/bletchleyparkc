@@ -66,7 +66,7 @@ static int next_distance(LetterFreq *lc, int number) {
     return distance;
 }
 
-Keytext* triangle_attack(const char* ciphertext, const LangStats *stats, int bound) {
+Keytext* triangle_attack(const char* ciphertext, const LangStats *stats, int bound, int ngrams_count) {
     char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
     int index = 0;
     LetterFreq *lf_ciphertext = get_letters_occurences(ciphertext);
@@ -84,7 +84,7 @@ Keytext* triangle_attack(const char* ciphertext, const LangStats *stats, int bou
     }
     
     TextGenerator generator = get_triangle_generator(ciphertext, keys);
-    Keytext* keytext = best_match(generator, stats, 1);
+    Keytext* keytext = best_match(generator, stats, ngrams_count);
     free(keys);
     free(lf_ciphertext);
     free(lf_language);
