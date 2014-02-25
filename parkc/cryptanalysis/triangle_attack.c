@@ -75,34 +75,33 @@ static int lang_distances(LetterFreq *lc) {
 static int combinate_distance(LetterFreq *lc, int number) {
     static int mask[] = {0, 0, 0};
     int distance = char_distances(lc[mask[0]].letter, lc[mask[1]].letter, lc[mask[2]].letter);
-//    if (lc[mask[0]].letter == 'u' && lc[mask[1]].letter == 'q' && lc[mask[2]].letter == 'e') {
-//        printf("Tady: %i, %c\n", distance, lc[mask[1]].letter);
-//    }
-//    printf("%i %i %i\n", mask[0], mask[1], mask[2]);
-    mask[2] = (mask[2] + 1) % number;
-    if (mask[2] == 0) {
-        mask[1] =(mask[1] + 1) % number;
-        if (mask[1] == 0) {
-            mask[0] = (mask[0] + 1) % number;
+    for (int i = 2; i >= 0; i--) {
+        if (i == 2) {
+            mask[i] = (mask[i] + 1) % number;
+            continue;
+        }
+        if (mask[i + 1] == 0) {
+            mask[i] = (mask[i] + 1) % number;
+        } else {
+            break;
         }
     }
     return distance;
 }
 
 Keytext* triangle_attack(const char* ciphertext, LangStats *stats, int bound) {
-    char keys[27] = {};
+    char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
     int index = 0;
     LetterFreq *lc_ciphertext = get_letters_occurences(ciphertext);
     LetterFreq *lc_language = freq_to_map(stats->ngrams[0]);
     order_letters(lc_language);
     int lang_diff = lang_distances(lc_language);
-    char c, key;
+    char key;
     for (int i = 0; i < pow(bound, 3); i++) {
         if (combinate_distance(lc_ciphertext, bound) == lang_diff) {
-            c = lc_ciphertext[i / (int)pow(bound, 2)].letter;
-            key = c - lc_language[0].letter + 'a';
+            key = lc_ciphertext[i / (int)pow(bound, 2)].letter;
+            key = key - lc_language[0].letter + 'a';
             key = key >= 'a' ? key : key + ALPHABET_LENGTH;
-            printf("klic: %c\n", key);
             keys[index++] = key;
         }
     }

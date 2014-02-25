@@ -14,7 +14,7 @@
 #include "cryptanalysis/triangle_attack.h"
 
 
-char* ciphertext = "ijezycluijydkiutuijudodqplhqtbusxfeluijdosxichjyphqtskjqtojutaedsyfeibutdyaheaoteifydoijefudosxzuxelyijkpuliusxijhqdlqbyiucqioletoteijhutksuhduilqjodufqdqpubupdufuabefbqcudk";
+char* ciphertext = "razajejwozkpkdkjqpewxuydkivxkvewgperjajwxevahelnkpkvalkgqzjaolhjeialnkzafvxkvevwgkn";
 
 char* opentext = "stojimvestinusedestenynazvradlechpovestnychsmrtizradcutadytedkonciposlednikrokydospinystopenychjehovistuzevsechstranvalisemasyvodydostreducernesvatynepanazeleznepekloplamenu";
 
