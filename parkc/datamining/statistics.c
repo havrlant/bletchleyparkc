@@ -38,7 +38,7 @@ LangStats *default_stats(const char *lang) {
 Keytext *best_match(TextGenerator generate, const LangStats *stats, int ngrams_count) {
     Keytext *temp, *result = NULL;
     double sim = -1, tempsim;
-    for (temp = generate(); temp != NULL; temp = generate()) {
+    for (temp = generate(INITIALIZE); temp != NULL; temp = generate(NEXT)) {
         tempsim = similarity(temp->text, stats, ngrams_count);
         if (sim == -1 || tempsim < sim) {
             if (result != NULL) {
