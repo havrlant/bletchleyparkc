@@ -17,7 +17,7 @@ static void test_ngrams_freq() {
 }
 
 static void test_word_ocurences() {
-    StringArray* sarray = create_string_array(3);
+    StringArray *sarray = create_string_array(3);
     sarray->items = (char*[]){"ha", "Python", "Ruby"};
     assert_eq(3, words_occurences(sarray, "Python is better than Ruby! Hahaha!"));
     assert_eq(1, words_occurences(sarray, "Python forever."));
@@ -33,7 +33,7 @@ static void test_deviation() {
 
 static void test_similarity() {
     double *ngrams[] = {((double[26]){50, 30, 20})};
-    StringArray* sarray = create_string_array(2);
+    StringArray *sarray = create_string_array(2);
     sarray->items = (char*[]){"Python", "Ruby"};
     LangStats *stats = create_stats(ngrams, sarray);
     assert_eq(807, round(similarity("aaababsjnkbasbbccccasdad", stats, 1)));

@@ -9,7 +9,7 @@ size_t get_file_size(const char * file_name) {
     return sb.st_size;
 }
 
-char* read_file(const char* file_name)
+char *read_file(const char *file_name)
 {
     size_t s;
     char * contents;

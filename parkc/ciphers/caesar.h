@@ -9,7 +9,7 @@
 
 void caesar_encrypt_par(const char*, char, char*);
 void caesar_decrypt_par(const char*, char, char*);
-char* caesar_encrypt(const char*, char);
-char* caesar_decrypt(const char*, char);
+char *caesar_encrypt(const char*, char);
+char *caesar_decrypt(const char*, char);
 
 #endif

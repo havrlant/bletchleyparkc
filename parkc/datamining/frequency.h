@@ -11,8 +11,8 @@
 #include "../utilities/arrayext.h"
 #include "../utilities/constants.h"
 
-int* ngrams_occur(const char*, char);
-double* ngrams_freq(const char*, char);
+int *ngrams_occur(const char*, char);
+double *ngrams_freq(const char*, char);
 double** load_frequencies(const char*);
 
 #endif

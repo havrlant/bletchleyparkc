@@ -1,6 +1,6 @@
 #include "statitics.h"
 
-double deviation(double* arr1, double* arr2, size_t length) {
+double deviation(double *arr1, double *arr2, size_t length) {
     double deviation = 0;
     for (size_t i = 0; i < length; i++) {
         deviation += pow(arr1[i] - arr2[i], 2);
@@ -8,7 +8,7 @@ double deviation(double* arr1, double* arr2, size_t length) {
     return deviation;
 }
 
-double similarity(char* text, const LangStats* stats, int ngrams_count) {
+double similarity(char *text, const LangStats *stats, int ngrams_count) {
     double sim = 0;
     double dev;
     double *freq;

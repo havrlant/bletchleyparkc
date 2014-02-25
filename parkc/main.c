@@ -14,9 +14,9 @@
 #include "cryptanalysis/triangle_attack.h"
 
 
-char* ciphertext = "razajejwozkpkdkjqpewxuydkivxkvewgperjajwxevahelnkpkvalkgqzjaolhjeialnkzafvxkvevwgkn";
+char *ciphertext = "razajejwozkpkdkjqpewxuydkivxkvewgperjajwxevahelnkpkvalkgqzjaolhjeialnkzafvxkvevwgkn";
 
-char* opentext = "stojimvestinusedestenynazvradlechpovestnychsmrtizradcutadytedkonciposlednikrokydospinystopenychjehovistuzevsechstranvalisemasyvodydostreducernesvatynepanazeleznepekloplamenu";
+char *opentext = "stojimvestinusedestenynazvradlechpovestnychsmrtizradcutadytedkonciposlednikrokydospinystopenychjehovistuzevsechstranvalisemasyvodydostreducernesvatynepanazeleznepekloplamenu";
 
 static int run_test(int argc, char *argv[]) {
     if (argc > 1) {
@@ -30,14 +30,14 @@ static int run_test(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
     if (!run_test(argc, argv)) {
-        LangStats* stats = default_stats("cs");
-//        LetterFreq* lf = freq_to_map(ngrams_freq(opentext, 1));
-//        LetterFreq* lf = freq_to_map(stats->ngrams[0]);
+        LangStats *stats = default_stats("cs");
+//        LetterFreq *lf = freq_to_map(ngrams_freq(opentext, 1));
+//        LetterFreq *lf = freq_to_map(stats->ngrams[0]);
 //        for (int i = 0; i < ALPHABET_LENGTH; i++) {
 //            printf("%c: %g\n", lf[i].letter, lf[i].freq);
 //        }
 //        printf("%s", caesar_decrypt(ciphertext, 'q'));
-        Keytext* ktext = triangle_attack(ciphertext, stats, 6, 2);
+        Keytext *ktext = triangle_attack(ciphertext, stats, 6, 2);
         printf("Uhodnuty klic: %s\n", ktext->key);
     }
     

@@ -8,7 +8,7 @@
 #include "../utilities/ospath.h"
 #include "../utilities/osext.h"
 
-StringArray* load_topwords(const char*);
+StringArray *load_topwords(const char*);
 int words_occurences(StringArray*, const char*);
 
 #endif

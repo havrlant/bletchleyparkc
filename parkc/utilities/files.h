@@ -10,7 +10,7 @@
 
 typedef enum {ROOT, SRC, DATA} Dir_types;
 size_t get_file_size(const char*);
-char* read_file(const char*);
-char* get_path(Dir_types);
+char *read_file(const char*);
+char *get_path(Dir_types);
 
 #endif

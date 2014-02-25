@@ -23,8 +23,8 @@ extern int _total_errors;
 } while(0)
 
 #define assert_array_eq(expected, actual, length, type) do {\
-    type* _actual = (actual);\
-    type* _expected = (expected);\
+    type *_actual = (actual);\
+    type *_expected = (expected);\
     _total_tests++;\
     for(size_t _i = 0; _i < length; _i++) {\
         if (_expected[_i] != _actual[_i]) {\
@@ -36,8 +36,8 @@ extern int _total_errors;
 } while(0);
 
 #define assert_str(expected, actual) do {\
-    char* _actual = (actual);\
-    char* _expected = (expected);\
+    char *_actual = (actual);\
+    char *_expected = (expected);\
     _total_tests++;\
     if(strcmp(_expected, _actual) != 0) {\
         _total_errors++;\
