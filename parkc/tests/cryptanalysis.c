@@ -11,11 +11,11 @@ static void test_caesar_brute() {
 
 static void test_triangle_attack() {
     LangStats *stats = default_langstats();
-    char *opentext = "vedeninasdotohonutiabychomzboziaktivnena";
+    char *opentext = "vedeninasdotohonutiabychomzboziaktivnenabizeliprotozepokudnesplnimeprodejzbozizakorunmesicnekratisenampenizereklamfdnesprazskapostovnidorucovatelkakteranechcezverejnitsvejmenoceskapostanatomnicspatnehonevidihledamekazdoukorunuzalezinamnatomjaksenedostatdoztratrikasefodborukomunikaceivomravinaclekarkuevukralikovoukteravedesitporadennaodvykanikourenichovanipostynadzvedloceskopodepsaloumluvuokontroletabakukdesezavazujemeomezitpocetprodejnichmistamyudelamepresnyopaknavicpodhlavickoustatniinstitucetojeabsurdnizlobisebudemeprotestovatunadrizenehoorganupostyinaministerstvuzdravotnictvidodavakralikova";
     char *ciphertext = empty_string(strlen(opentext));
     Keytext *keytext;
     char key[2] = {};
-    for (int i = 0; i < ALPHABET_LENGTH; i++) {
+    for (int i = 0; i < 1; i++) {
         key[0] = 'a' + i;
         caesar_encrypt_par(opentext, key[0], ciphertext);
         keytext = triangle_attack(ciphertext, stats, 6, 1);

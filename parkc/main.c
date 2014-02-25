@@ -12,11 +12,16 @@
 #include "cryptanalysis/caesar_brute.h"
 #include "tests/run_tests.h"
 #include "cryptanalysis/triangle_attack.h"
+#include "cryptanalysis/vigenere_brute.h"
 
 
 char *ciphertext = "razajejwozkpkdkjqpewxuydkivxkvewgperjajwxevahelnkpkvalkgqzjaolhjeialnkzafvxkvevwgkn";
 
-char *opentext = "stojimvestinusedestenynazvradlechpovestnychsmrtizradcutadytedkonciposlednikrokydospinystopenychjehovistuzevsechstranvalisemasyvodydostreducernesvatynepanazeleznepekloplamenu";
+char *opentext = "jasynpoklopurozzurendosilenstvivodarnusrovnamsezemijmenemmistrukanvodstvijamatkuvlastnivsakkdovizdaprokouknutoumelnikolivjakpribuznismrtlidemzvodarnysmrtivrchnizradkynijenslavumistrumzcistirnytedvidisotcecozzenstinytveuzralouzjetotadybratretyslezlzradcumdozadkujensedobrepodivejcostvojijimkouprovedlimusimedrzetpospoluatuznenimarnesnazenivejmenusatanarozpoutejmepeklouzsevmychpredstavachrodisedevyjevykrasnemodrenadrzecimtakrychlecernajinenitonahodouodpadnivodamrtverybynahazimedovodarenskychobjektuuznehodlamdalnaslouchattemvodarenskymblabolumsedekrysysezerouzbytkyvodarenskychkonstrukcipredpovidamvecnouskazuvodarenskemafiitakjakodavnopredcasemjsmesvatouchatrutopilystejnykonecpripravimepodvodnikumzvodarnynelzeveritnikomukdomatlamuplnoucistotyvsechnytyhlebestiecekavodazestokysmrtlidemzvodarnysmrtivrchnizradkynijenslavumistrumzcistirnyzevsechstrannavodarnusilaspinyutocizhorastavbydrtizeleznemepoklopydokristalovevodytecoucistirenskesplaskysabotaztospachanavejmenusedepravdy";
+
+char *spravne = "zoeehpuebiytdhdiuzdcjaliycabjlaepfaajcdelaypijtptdcysyqozilyhpihjlyjspidlpbpjqrjjbbqketzieutuelycketcytueeqpdquqduuiqhfjcueicxujqhytolhdeutucasuhzujqteqythurqpulqdoeukdeqqqexjlqdobecthoperaehisejaftlqueaktuaqyaaqeuqcclexhebjdesyqceeycehdpujakejcbkijixjbuyulqiacbulqohlxptdubkiksjduuiqqtdyidjyeiltybduafeyqlejeyydubaqjjfxqzdufl";
+
+char *spatne = "tiyybjoyvcsnxbxcotxwdufcswuvdfuyjzuudwxyfusjcdnjnxwsmskitcfsbjcbdfsdmjcxfjvjdklddvvkeyntcyonoyfsweynwsnoyykjxkokxoockbzdwoycwrodkbsnifbxyonowumobtodknyksnbolkjofkxiyoexykkkyrdfkxivywnbijyluybcmyduznfkoyuenouksuukyokwwfyrbyvdxymskwyyswybxjodueydwvecdcrdvosofkcuwvofkibfrjnxovecemdxoockknxscxdsycfnsvxouzyskfydyssxovukddzrktxozf";
 
 static int run_test(int argc, char *argv[]) {
     if (argc > 1) {
@@ -30,15 +35,11 @@ static int run_test(int argc, char *argv[]) {
 
 int main(int argc, char *argv[]) {
     if (!run_test(argc, argv)) {
-        LangStats *stats = default_stats("cs");
-//        LetterFreq *lf = freq_to_map(ngrams_freq(opentext, 1));
-//        LetterFreq *lf = freq_to_map(stats->ngrams[0]);
-//        for (int i = 0; i < ALPHABET_LENGTH; i++) {
-//            printf("%c: %g\n", lf[i].letter, lf[i].freq);
-//        }
-//        printf("%s", caesar_decrypt(ciphertext, 'q'));
-        Keytext *ktext = triangle_attack(ciphertext, stats, 6, 2);
-        printf("Uhodnuty klic: %s\n", ktext->key);
+//        triangle_attack(spravne, default_stats("cs"), 8, 1);
+//        triangle_attack(spatne, default_stats("cs"), 8, 1);
+//        ciphertext = vigenere_encrypt(opentext, "qwp");
+        vigenere_brute(vigenere_encrypt(opentext, "qwasd"), default_stats("cs"));
+//        vigenere_brute(vigenere_encrypt(opentext, "key"), default_stats("cs"));
     }
     
     printf("Done.\n");

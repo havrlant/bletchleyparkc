@@ -30,6 +30,7 @@
 		E1DF85E218BBF3610049654A /* cryptanalysis.c in Sources */ = {isa = PBXBuildFile; fileRef = E1DF85E118BBF3610049654A /* cryptanalysis.c */; };
 		E1FC9DD518BC026C00B20411 /* triangle_attack.c in Sources */ = {isa = PBXBuildFile; fileRef = E1FC9DD418BC026C00B20411 /* triangle_attack.c */; };
 		E1FC9DD818BCDC5200B20411 /* utils.c in Sources */ = {isa = PBXBuildFile; fileRef = E1FC9DD718BCDC5200B20411 /* utils.c */; };
+		E1FC9DDB18BCFA7100B20411 /* vigenere_brute.c in Sources */ = {isa = PBXBuildFile; fileRef = E1FC9DDA18BCFA7100B20411 /* vigenere_brute.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		E1FC9DD618BC027900B20411 /* triangle_attack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = triangle_attack.h; sourceTree = "<group>"; };
 		E1FC9DD718BCDC5200B20411 /* utils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utils.c; sourceTree = "<group>"; };
 		E1FC9DD918BCDC6700B20411 /* utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		E1FC9DDA18BCFA7100B20411 /* vigenere_brute.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vigenere_brute.c; sourceTree = "<group>"; };
+		E1FC9DDC18BCFA7D00B20411 /* vigenere_brute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vigenere_brute.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				E12EE38918B948300029BBF5 /* caesar_brute.h */,
 				E1FC9DD418BC026C00B20411 /* triangle_attack.c */,
 				E1FC9DD618BC027900B20411 /* triangle_attack.h */,
+				E1FC9DDA18BCFA7100B20411 /* vigenere_brute.c */,
+				E1FC9DDC18BCFA7D00B20411 /* vigenere_brute.h */,
 			);
 			path = cryptanalysis;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				E102CFC718BA3C2000813519 /* run_tests.c in Sources */,
 				E190768118B8BD990082E443 /* arrayext.c in Sources */,
 				E102CFCE18BBD3A600813519 /* utilities_tests.c in Sources */,
+				E1FC9DDB18BCFA7100B20411 /* vigenere_brute.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
