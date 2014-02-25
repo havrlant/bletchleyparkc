@@ -15,8 +15,8 @@ typedef struct {
 } LangStats;
 
 double deviation(double*, double*, size_t);
-double similarity(char*, LangStats*, int);
+double similarity(char*, const LangStats*, int);
 LangStats* create_stats(double**, StringArray*);
-Keytext *best_match(Keytext* (*generate)(), LangStats*, int);
+Keytext *best_match(Keytext* (*generate)(), const LangStats*, int);
 LangStats *default_stats(const char*);
 #endif

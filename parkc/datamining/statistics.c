@@ -8,7 +8,7 @@ double deviation(double* arr1, double* arr2, size_t length) {
     return deviation;
 }
 
-double similarity(char* text, LangStats* stats, int ngrams_count) {
+double similarity(char* text, const LangStats* stats, int ngrams_count) {
     double sim = 0;
     double dev;
     double *freq;
@@ -35,7 +35,7 @@ LangStats *default_stats(const char *lang) {
     
 }
 
-Keytext *best_match(TextGenerator generate, LangStats *stats, int ngrams_count) {
+Keytext *best_match(TextGenerator generate, const LangStats *stats, int ngrams_count) {
     Keytext *temp, *result = NULL;
     double sim = -1, tempsim;
     for (temp = generate(); temp != NULL; temp = generate()) {

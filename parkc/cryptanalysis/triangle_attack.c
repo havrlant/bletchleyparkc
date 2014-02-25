@@ -37,14 +37,6 @@ static int letter_distance(char letter1, char letter2) {
     return distance <= (ALPHABET_LENGTH / 2) ? distance : ALPHABET_LENGTH - distance;
 }
 
-//static int* lang_differences(LetterFreq *lc_language) {
-//    int* diffs = (int*) safe_malloc(sizeof(int) * 3);
-//    diffs[0] = letter_distance(lc_language[0].letter, lc_language[1].letter);
-//    diffs[1] = letter_distance(lc_language[0].letter, lc_language[2].letter);
-//    diffs[2] = letter_distance(lc_language[1].letter, lc_language[2].letter);
-//    return  diffs;
-//}
-
 static int char_distances(char a, char b, char c) {
     int distance = 0;
     distance += letter_distance(a, b);
@@ -54,25 +46,10 @@ static int char_distances(char a, char b, char c) {
 }
 
 static int lang_distances(LetterFreq *lc) {
-//    printf("%c %c %c", lc[0].letter, lc[1].letter, lc[2].letter);
     return char_distances(lc[0].letter, lc[1].letter, lc[2].letter);
 }
 
-//static int* combinate_distance(LetterFreq *lc, int number) {
-//    int count = number * number * number;
-//    int* distances = (int*) safe_malloc(sizeof(int) * count);
-//    int counter = 0;
-//    for (int i = 0; i < number; i++) {
-//        for (int j = 0; j < number; j++) {
-//            for (int k = 0; k < number; k++) {
-//                distances[counter++] = char_distances(lc[i].letter, lc[j].letter, lc[k].letter);
-//            }
-//        }
-//    }
-//    return distances;
-//}
-
-static int combinate_distance(LetterFreq *lc, int number) {
+static int next_distance(LetterFreq *lc, int number) {
     static int mask[] = {0, 0, 0};
     int distance = char_distances(lc[mask[0]].letter, lc[mask[1]].letter, lc[mask[2]].letter);
     for (int i = 2; i >= 0; i--) {
@@ -89,23 +66,27 @@ static int combinate_distance(LetterFreq *lc, int number) {
     return distance;
 }
 
-Keytext* triangle_attack(const char* ciphertext, LangStats *stats, int bound) {
+Keytext* triangle_attack(const char* ciphertext, const LangStats *stats, int bound) {
     char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
     int index = 0;
-    LetterFreq *lc_ciphertext = get_letters_occurences(ciphertext);
-    LetterFreq *lc_language = freq_to_map(stats->ngrams[0]);
-    order_letters(lc_language);
-    int lang_diff = lang_distances(lc_language);
+    LetterFreq *lf_ciphertext = get_letters_occurences(ciphertext);
+    LetterFreq *lf_language = freq_to_map(stats->ngrams[0]);
+    order_letters(lf_language);
+    int lang_diff = lang_distances(lf_language);
     char key;
     for (int i = 0; i < pow(bound, 3); i++) {
-        if (combinate_distance(lc_ciphertext, bound) == lang_diff) {
-            key = lc_ciphertext[i / (int)pow(bound, 2)].letter;
-            key = key - lc_language[0].letter + 'a';
+        if (next_distance(lf_ciphertext, bound) == lang_diff) {
+            key = lf_ciphertext[i / (int)pow(bound, 2)].letter;
+            key = key - lf_language[0].letter + 'a';
             key = key >= 'a' ? key : key + ALPHABET_LENGTH;
             keys[index++] = key;
         }
     }
     
     TextGenerator generator = get_triangle_generator(ciphertext, keys);
-    return best_match(generator, stats, 1);
+    Keytext* keytext = best_match(generator, stats, 1);
+    free(keys);
+    free(lf_ciphertext);
+    free(lf_language);
+    return keytext;
 }
