@@ -45,7 +45,7 @@ static int lang_distances(LetterFreq *lc) {
 }
 
 static int next_distance(LetterFreq *lc, int number) {
-    static int mask[] = {0, 0, 0};
+    static int mask[] = {0, 1, 2};
     int distance = char_distances(lc[mask[0]].letter, lc[mask[1]].letter, lc[mask[2]].letter);
     for (int i = 2; i >= 0; i--) {
         if (i == 2) {
