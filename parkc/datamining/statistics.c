@@ -42,13 +42,13 @@ Keytext *best_match(TextGenerator generate, const LangStats *stats, int ngrams_c
         tempsim = similarity(temp->text, stats, ngrams_count);
         if (sim == -1 || tempsim < sim) {
             if (result != NULL) {
-                free(result->key);
+//                free(result->key);
             }
             free(result);
             result = temp;
             sim = tempsim;
         } else {
-            free(temp->key);
+//            free(temp->key);
             free(temp);
         }
     }

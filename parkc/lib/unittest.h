@@ -36,14 +36,13 @@ extern int _total_errors;
 } while(0);
 
 #define assert_str(expected, actual) do {\
-    char *_actual = (actual);\
-    char *_expected = (expected);\
+    const char *_actual = (actual);\
+    const char *_expected = (expected);\
     _total_tests++;\
     if(strcmp(_expected, _actual) != 0) {\
         _total_errors++;\
         printf("Test failed. Code %s returns %s, expected: %s\n", #actual, _actual, _expected);\
     }\
-    free(_actual); /* Not sure about this... */\
 } while(0)
 
 #endif

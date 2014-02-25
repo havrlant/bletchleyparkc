@@ -1,13 +1,13 @@
 #include "ciphers_test.h"
 
 static void test_caesar_encrypt() {
-    assert_str("bipk", caesar_encrypt("ahoj", 'b'));
-    assert_str("wxyzabcdefghijklmnopqrstuv", caesar_encrypt("abcdefghijklmnopqrstuvwxyz", 'w'));
+    assert_str("bipk", caesar_encrypt("ahoj", "b"));
+    assert_str("wxyzabcdefghijklmnopqrstuv", caesar_encrypt("abcdefghijklmnopqrstuvwxyz", "w"));
 }
 
 static void test_caesar_decrypt() {
-    assert_str("ahoj", caesar_decrypt("bipk", 'b'));
-    assert_str("abcdefghijklmnopqrstuvwxyz", caesar_decrypt("wxyzabcdefghijklmnopqrstuv", 'w'));
+    assert_str("ahoj", caesar_decrypt("bipk", "b"));
+    assert_str("abcdefghijklmnopqrstuvwxyz", caesar_decrypt("wxyzabcdefghijklmnopqrstuv", "w"));
 }
 
 static void test_vigenere_encrypt() {

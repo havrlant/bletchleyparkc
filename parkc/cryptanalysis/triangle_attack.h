@@ -8,6 +8,7 @@
 #include "../datamining/statitics.h"
 #include "../utilities/constants.h"
 #include "../utilities/osext.h"
+#include "../ciphers/caesar.h"
 
 typedef struct{
     char letter;

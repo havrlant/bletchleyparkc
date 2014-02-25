@@ -138,10 +138,23 @@ char* get_possible_keys(const char *ciphertext, const LangStats *stats, int boun
     return keys;
 }
 
+char** convert_to_classical_keys(const char *keys) {
+    char **new_keys = (char**) safe_malloc(sizeof(char*) * (strlen(keys)));
+    int i;
+    for (i = 0; keys[i] != '\0'; i++) {
+        new_keys[i] = safe_malloc(2);
+        new_keys[i][0] = keys[i];
+        new_keys[i][1] = '\0';
+    }
+    return new_keys;
+}
+
 Keytext *triangle_attack(const char *ciphertext, const LangStats *stats, int bound, int ngrams_count) {
     Keytext *keytext;
-    char *keys = get_possible_keys(ciphertext, stats, bound, ngrams_count);
-    TextGenerator generator = get_triangle_generator(ciphertext, keys);
+    const char *keys = get_possible_keys(ciphertext, stats, bound, ngrams_count);
+    char **classical_keys = convert_to_classical_keys(keys);
+    TextGenerator generator = get_generator(ciphertext, classical_keys, strlen(keys), caesar_decrypt_par);
+//    TextGenerator generator = get_triangle_generator(ciphertext, keys);
     keytext = best_match(generator, stats, ngrams_count);
     return keytext;
 }
