@@ -8,5 +8,7 @@
 
 char* vigenere_encrypt(const char*, const char*);
 char* vigenere_decrypt(const char*, const char*);
+char* vigenere_decrypt_par(const char*, const char*, char*);
+char* vigenere_encrypt_par(const char*, const char*, char*);
 
 #endif

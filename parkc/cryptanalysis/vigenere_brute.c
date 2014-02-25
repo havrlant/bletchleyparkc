@@ -13,23 +13,26 @@ static char *every_n_char(const char* ciphertext, int start, int skip, char* out
 
 char *get_key(const char *ciphertext, const LangStats *stats, int keylen) {
     char *output = empty_string((strlen(ciphertext) / 2) + 1);
-    char* key = empty_string(keylen);
+    char *key = empty_string(keylen);
     Keytext *current_key;
     for (int i = 0; i < keylen; i++) {
         every_n_char(ciphertext, i, keylen, output);
         current_key = triangle_attack(output, stats, 8, 1);
         key[i] = current_key != NULL ? current_key->key[0] : 'a';
+        if (key[i] == '?') {
+            key[i] = 'a';
+        }
     }
     free(output);
-    free(current_key);
     return key;
 }
 
 Keytext *vigenere_brute(const char *ciphertext, const LangStats *stats) {
-    char *key;
+    int limit = 10;
+    char **keys = (char**) safe_malloc(sizeof(char*) * (limit - 2));
     for (int i = 2; i < 10; i++) {
-        key = get_key(ciphertext, stats, i);
-        printf("Vysledek: %s\n", key);
+        keys[i - 2] = get_key(ciphertext, stats, i);
     }
-    return NULL;
+    TextGenerator generator = get_generator(ciphertext, keys, limit - 2, vigenere_decrypt_par);
+    return best_match(generator, stats, 1);
 }
