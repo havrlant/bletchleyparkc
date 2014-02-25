@@ -3,12 +3,7 @@
 static int compare_letter_count(const void *a, const void *b) {
     const LetterFreq *aa = (LetterFreq*)a;
     const LetterFreq *bb = (LetterFreq*)b;
-    if (aa->freq > bb->freq)
-        return -1;
-    else if (aa->freq < bb->freq)
-        return 1;
-    else
-        return 0;
+    return (aa->freq < bb->freq) - (aa->freq > bb->freq);
 }
 
 static void order_letters(LetterFreq *lc) {
