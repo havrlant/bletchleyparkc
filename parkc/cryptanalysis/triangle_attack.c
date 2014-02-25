@@ -1,9 +1,9 @@
 #include "triangle_attack.h"
 
 static int compare_letter_count(const void *a, const void *b) {
-    const LetterFreq *aa = (LetterFreq*)a;
-    const LetterFreq *bb = (LetterFreq*)b;
-    return (aa->freq < bb->freq) - (aa->freq > bb->freq);
+    const LetterFreq *lfa = (LetterFreq*)a;
+    const LetterFreq *lfb = (LetterFreq*)b;
+    return (lfa->freq < lfb->freq) - (lfa->freq > lfb->freq);
 }
 
 static void order_letters(LetterFreq *lc) {
