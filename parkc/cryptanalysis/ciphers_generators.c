@@ -6,7 +6,7 @@ static char *caesar_triangle_text;
 
 static Keytext *caesar_generator(GeneratorDriver driver) {
     static int i;
-    if (driver == RESTART) {
+    if (driver == INITIALIZE) {
         i = 0;
     }
     if (i == ALPHABET_LENGTH) {
@@ -26,7 +26,7 @@ static Keytext *caesar_generator(GeneratorDriver driver) {
 
 static Keytext *triangle_generator(GeneratorDriver driver) {
     static int i;
-    if (driver == RESTART) {
+    if (driver == INITIALIZE) {
         i = 0;
     }
     if (caesar_keys[i] == '\0' || caesar_keys[i] == '?') {

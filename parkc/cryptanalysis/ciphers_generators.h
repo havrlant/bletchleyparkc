@@ -8,9 +8,6 @@
 #include "../utilities/constants.h"
 #include <string.h>
 
-#define RESTART 1
-#define CONTINUE 0
-
 typedef enum {NEXT = 0, INITIALIZE = 1} GeneratorDriver;
 
 typedef struct {
