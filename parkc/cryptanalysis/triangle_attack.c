@@ -149,10 +149,8 @@ char** convert_to_classical_keys(const char *keys) {
 }
 
 Keytext *triangle_attack(const char *ciphertext, const LangStats *stats, int bound, int ngrams_count) {
-    Keytext *keytext;
     const char *keys = get_possible_keys(ciphertext, stats, bound, ngrams_count);
     char **classical_keys = convert_to_classical_keys(keys);
     TextGenerator generator = get_generator(ciphertext, classical_keys, strlen(keys), caesar_decrypt_par);
-    keytext = best_match(generator, stats, ngrams_count);
-    return keytext;
+    return best_match(generator, stats, ngrams_count);
 }

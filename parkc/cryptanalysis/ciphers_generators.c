@@ -46,6 +46,11 @@ static Keytext *cipher_generator(GeneratorDriver driver) {
         return NULL;
     }
     
+    if (strcmp(_keys[i], "?") == 0) {
+        i++;
+        return cipher_generator(NEXT);
+    }
+    
     _decrypt(_ciphertext, _keys[i], opentext);
     Keytext *keytext = (Keytext*) malloc(sizeof(Keytext));
     keytext->text = opentext;

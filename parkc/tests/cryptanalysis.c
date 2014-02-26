@@ -23,7 +23,20 @@ static void test_triangle_attack() {
     }
 }
 
+static void test_vigenere_brute() {
+    LangStats *stats = default_langstats();
+    char *opentext = "jasynpoklopurozzurendosilenstvivodarnusrovnamsezemijmenemmistrukanvodstvijamatkuvlastnivsakkdovizdaprokouknutoumelnikolivjakpribuznismrtlidemzvodarnysmrtivrchnizradkynijenslavumistrumzcistirnytedvidisotcecozzenstinytveuzralouzjetotadybratretyslezlzradcumdozadkujensedobrepodivejcostvojijimkouprovedlimusimedrzetpospoluatuznenimarnesnazenivejmenusatanarozpoutejmepeklouzsevmychpredstavachrodisedevyjevykrasnemodrenadrzecimtakrychlecernajinenitonahodouodpadnivodamrtverybynahazimedovodarenskychobjektuuznehodlamdalnaslouchattemvodarenskymblabolumsedekrysysezerouzbytkyvodarenskychkonstrukcipredpovidamvecnouskazuvodarenskemafiitakjakodavnopredcasemjsmesvatouchatrutopilystejnykonecpripravimepodvodnikumzvodarnynelzeveritnikomukdomatlamuplnoucistotyvsechnytyhlebestiecekavodazestokysmrtlidemzvodarnysmrtivrchnizradkynijenslavumistrumzcistirnyzevsechstrannavodarnusilaspinyutocizhorastavbydrtizeleznemepoklopydokristalovevodytecoucistirenskesplaskysabotaztospachanavejmenusedepravdy";
+    char *keys[] = {"klic", "qwsa", "as", "strom"};
+    Keytext *keytext;
+    size_t key_count = 4;
+    for (size_t i = 0; i < key_count; i++) {
+        keytext = vigenere_brute(vigenere_encrypt(opentext, keys[i]), stats);
+        assert_str(keys[i], keytext->key);
+    }
+}
+
 void all_cryptanalysis_tests() {
     test_caesar_brute();
     test_triangle_attack();
+    test_vigenere_brute();
 }

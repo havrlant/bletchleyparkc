@@ -7,7 +7,6 @@ static char *every_n_char(const char* ciphertext, int start, int skip, char* out
         output[index++] = ciphertext[i];
     }
     output[index] = '\0';
-//    printf("\n--------------\n%s\n", output);
     return output;
 }
 
@@ -18,7 +17,7 @@ char *get_key(const char *ciphertext, const LangStats *stats, int keylen) {
     for (int i = 0; i < keylen; i++) {
         every_n_char(ciphertext, i, keylen, output);
         current_key = triangle_attack(output, stats, 8, 1);
-        key[i] = current_key != NULL ? current_key->key[0] : 'a';
+        key[i] = current_key != NULL ? (current_key->key)[0] : 'a';
         if (key[i] == '?') {
             key[i] = 'a';
         }
