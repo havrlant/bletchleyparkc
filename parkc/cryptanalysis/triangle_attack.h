@@ -15,7 +15,7 @@ typedef struct{
     double freq;
 } LetterFreq;
 
-Keytext *triangle_attack(const char*, const LangStats*, int, int);
+Keytext triangle_attack(const char*, const LangStats*, int, int);
 LetterFreq *freq_to_map(double*);
 
 #endif

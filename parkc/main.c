@@ -38,8 +38,8 @@ int main(int argc, char *argv[]) {
 //        triangle_attack(spravne, default_stats("cs"), 8, 1);
 //        triangle_attack(spatne, default_stats("cs"), 8, 1);
 //        ciphertext = vigenere_encrypt(opentext, "qwp");
-        Keytext *ktext = vigenere_brute(vigenere_encrypt(opentext, "klic"), default_stats("cs"));
-        printf("%s\n", ktext->key);
+        Keytext ktext = vigenere_brute(vigenere_encrypt(opentext, "klic"), default_stats("cs"));
+        printf("%s\n", ktext.key);
 //        vigenere_brute(vigenere_encrypt(opentext, "key"), default_stats("cs"));
     }
     
