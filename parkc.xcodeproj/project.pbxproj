@@ -130,6 +130,7 @@
 		E190768B18B8BD9F0082E443 /* vigenere.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vigenere.c; sourceTree = "<group>"; };
 		E190769018B8BDBF0082E443 /* files.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = files.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E193DE8A18B1181B004A5EF4 /* parkc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = parkc; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1ABBF1018C65710008910F6 /* ciphers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ciphers.h; sourceTree = "<group>"; };
 		E1DF85DE18BBDA200049654A /* datamining_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; lineEnding = 0; path = datamining_tests.c; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
 		E1DF85E018BBDA380049654A /* datamining_tests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = datamining_tests.h; sourceTree = "<group>"; };
 		E1DF85E118BBF3610049654A /* cryptanalysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; lineEnding = 0; path = cryptanalysis.c; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
@@ -243,6 +244,7 @@
 				E171DE5818B8F34400881B43 /* caesar.h */,
 				E156574018B8F54700415902 /* vigenere.h */,
 				E156574118B8F55D00415902 /* substitution.h */,
+				E1ABBF1018C65710008910F6 /* ciphers.h */,
 			);
 			path = ciphers;
 			sourceTree = "<group>";

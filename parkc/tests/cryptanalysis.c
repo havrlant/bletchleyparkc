@@ -15,7 +15,7 @@ static void test_triangle_attack() {
     char *ciphertext = empty_string(strlen(opentext));
     Keytext keytext;
     char key[2] = {};
-    for (int i = 0; i < ALPHABET_LENGTH; i++) {
+    for (int i = 0; i < ALPHABET_LENGTH / 2; i++) {
         key[0] = 'a' + i;
         caesar_encrypt_par(opentext, key, ciphertext);
         keytext = triangle_attack(ciphertext, stats, 6, 3);
