@@ -42,7 +42,12 @@ cipherfun get_cipher_fun(const char* cipher_names[], const cipherfun cipfuns[], 
             return cipfuns[i];
         }
     }
-    return NULL;
+    printf("Error: Invalid cipher name. Valid names: ");
+    for (int i = 0; i < ciphers_count; i++) {
+        printf("%s ", cipher_names[i]);
+    }
+    printf("\n");
+    exit(EXIT_FAILURE);
 }
 
 int main(int argc, char *argv[]) {
@@ -77,18 +82,18 @@ int main(int argc, char *argv[]) {
                 break;
             default:
                 printf("Unknow argument -%c.", c);
-                abort();
+                exit(EXIT_FAILURE);
         }
     }
     
     if (encrypt != NULL || decrypt != NULL) {
         if (key == NULL) {
             printf("Error: Key is missing");
-            abort();
+            exit(EXIT_FAILURE);
         }
         if (argc <= optind) {
             printf("Error: Input text missing.\n");
-            abort();
+            exit(EXIT_FAILURE);
         } else {
             text = argv[optind];
         }
