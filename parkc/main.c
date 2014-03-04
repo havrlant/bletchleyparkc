@@ -1,3 +1,7 @@
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,26 +27,28 @@ char *spravne = "zoeehpuebiytdhdiuzdcjaliycabjlaepfaajcdelaypijtptdcysyqozilyhpi
 
 char *spatne = "tiyybjoyvcsnxbxcotxwdufcswuvdfuyjzuudwxyfusjcdnjnxwsmskitcfsbjcbdfsdmjcxfjvjdklddvvkeyntcyonoyfsweynwsnoyykjxkokxoockbzdwoycwrodkbsnifbxyonowumobtodknyksnbolkjofkxiyoexykkkyrdfkxivywnbijyluybcmyduznfkoyuenouksuukyokwwfyrbyvdxymskwyyswybxjodueydwvecdcrdvosofkcuwvofkibfrjnxovecemdxoockknxscxdsycfnsvxouzyskfydyssxovukddzrktxozf";
 
-static int run_test(int argc, char *argv[]) {
-    if (argc > 1) {
-        if (strcmp("--test", argv[1]) == 0) {
-            run_all_tests();
-            return 1;
-        }
-    }
-    return 0;
-}
 
 int main(int argc, char *argv[]) {
-    if (!run_test(argc, argv)) {
-//        triangle_attack(spravne, default_stats("cs"), 8, 1);
-//        triangle_attack(spatne, default_stats("cs"), 8, 1);
-//        ciphertext = vigenere_encrypt(opentext, "qwp");
-        Keytext ktext = vigenere_brute(vigenere_encrypt(opentext, "klic"), default_stats("cs"));
-        printf("%s\n", ktext.key);
-//        vigenere_brute(vigenere_encrypt(opentext, "key"), default_stats("cs"));
+    int runtest = 0;
+    int optarg;
+    
+    opterr = 0;
+    
+    while ((optarg = getopt(argc, argv, "u")) != -1) {
+        switch(optarg) {
+            case 'u':
+                runtest = 1;
+                break;
+            default:
+                printf("Unknow argument -%c.", optarg);
+                abort();
+        }
     }
     
-    printf("Done.\n");
+    if (runtest) {
+        run_all_tests();
+    } else {
+        
+    }
     return 0;
 }
