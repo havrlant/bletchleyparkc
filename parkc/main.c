@@ -17,6 +17,8 @@
 #include "tests/run_tests.h"
 #include "cryptanalysis/triangle_attack.h"
 #include "cryptanalysis/vigenere_brute.h"
+#include "lib/comb/k-permutation.h"
+#include "lib/comb/comb-util.h"
 
 
 char *ciphertext = "razajejwozkpkdkjqpewxuydkivxkvewgperjajwxevahelnkpkvalkgqzjaolhjeialnkzafvxkvevwgkn";
@@ -48,7 +50,13 @@ int main(int argc, char *argv[]) {
     if (runtest) {
         run_all_tests();
     } else {
-        
+        int test = 0, shift = 0;
+        printf("Test: %i\n", test);
+        for (int i = 0; i < 100; i++) {
+            test += 10 << shift;
+            shift += 5;
+            printf("Test: %i\n", 10 << shift);
+        }
     }
     return 0;
 }

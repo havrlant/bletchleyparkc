@@ -3,12 +3,15 @@
 
 #include <stdlib.h>
 #include <math.h>
+#include <stdint.h>
 #include "ciphers_generators.h"
 #include "../datamining/frequency.h"
 #include "../datamining/statitics.h"
 #include "../utilities/constants.h"
 #include "../utilities/osext.h"
 #include "../ciphers/caesar.h"
+#include "../lib/comb/k-permutation.h"
+#include "../lib/comb/combination.h"
 
 typedef struct{
     char letter;

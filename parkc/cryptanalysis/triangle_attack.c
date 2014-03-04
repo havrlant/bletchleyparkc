@@ -33,57 +33,57 @@ static int letter_distance(char letter1, char letter2) {
     return distance <= (ALPHABET_LENGTH / 2) ? distance : ALPHABET_LENGTH - distance;
 }
 
-static int char_distances(char a, char b, char c) {
-    int distance = 0;
-    distance += letter_distance(a, b);
-    distance += letter_distance(a, c) << 8;
-    distance += letter_distance(b, c) << 16;
-    return distance;
-}
-
-static int lang_distances(LetterFreq *lc) {
-    return char_distances(lc[0].letter, lc[1].letter, lc[2].letter);
-}
-
-static int next_distance(LetterFreq *lc, int number, char *key) {
-    static int mask[] = {0, 1, 2};
-    int distance = char_distances(lc[mask[0]].letter, lc[mask[1]].letter, lc[mask[2]].letter);
-    *key = lc[mask[0]].letter;
-    for (int i = 2; i >= 0; i--) {
-        if (i == 2) {
-            mask[i] = (mask[i] + 1) % number;
-            continue;
-        }
-        if (mask[i + 1] == 0) {
-            mask[i] = (mask[i] + 1) % number;
-        } else {
-            break;
-        }
+static void init_perm_array(unsigned int *array, unsigned int length) {
+    for (unsigned int i = 0; i < length; i++) {
+        array[i] = i;
     }
-    return distance;
 }
 
-static void find_keys(LetterFreq *lfc, LetterFreq *lfl, char *keys, int lang_dist, int bound) {
+static uint64_t char_distances(LetterFreq *lfc, unsigned int *mask, unsigned int k) {
+    unsigned int tempmask[2];
+    init_perm_array(tempmask, 2);
+    uint64_t cdistance = 0;
+    int shift = 0;
+    do {
+        cdistance += letter_distance(lfc[mask[tempmask[0]]].letter, lfc[mask[tempmask[1]]].letter) << shift;
+        shift += 4;
+    } while (MBnext_combination(tempmask, k, 2));
+    return cdistance;
+}
+
+static uint64_t lang_distances(LetterFreq *lc, unsigned int k) {
+    unsigned int mask[k];
+    init_perm_array(mask, k);
+    return char_distances(lc, mask, k);
+}
+
+static void find_keys(LetterFreq *lfc, LetterFreq *lfl, char *keys, uint64_t lang_dist, int k, int n) {
+    unsigned int mask[k];
+    init_perm_array(mask, k);
     char key;
     int index = 0;
-    for (int i = 0; i < pow(bound, 3); i++) {
-        if (next_distance(lfc, bound, &key) == lang_dist) {
+    uint64_t distance;
+    do {
+        distance = char_distances(lfc, mask, k);
+        key = lfc[mask[0]].letter;
+        if (distance == lang_dist) {
             key = key - lfl[0].letter + 'a';
             key = key >= 'a' ? key : key + ALPHABET_LENGTH;
             keys[index++] = key;
         }
-    }
+    } while (MBnext_k_permutation(mask, n, k));
+    
     if (keys[0] == '\0') {
         keys[0] = '?';
     }
 }
 
-static char *get_side_keys(LetterFreq *lfc, LetterFreq *lfl, const char *ciphertext, int bound, int ngrams_count, int (*compar)(const void*, const void*)) {
+static char *get_side_keys(LetterFreq *lfc, LetterFreq *lfl, const char *ciphertext, int n, int ngrams_count, int (*compar)(const void*, const void*)) {
     char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
     qsort(lfc, ALPHABET_LENGTH, sizeof(LetterFreq), compar);
     qsort(lfl, ALPHABET_LENGTH, sizeof(LetterFreq), compar);
-    int lang_diff = lang_distances(lfl);
-    find_keys(lfc, lfl, keys, lang_diff, bound);
+    uint64_t lang_diff = lang_distances(lfl, 3);
+    find_keys(lfc, lfl, keys, lang_diff, 3, n);
     return keys;
 }
 
@@ -120,12 +120,12 @@ static char *strunion(char *str1, char *str2) {
     return sunion;
 }
 
-char* get_possible_keys(const char *ciphertext, const LangStats *stats, int bound, int ngrams_count) {
+char* get_possible_keys(const char *ciphertext, const LangStats *stats, int n, int ngrams_count) {
     char *top_keys, *bottom_keys;
     LetterFreq *lfc = get_letters_occurences(ciphertext);
     LetterFreq *lfl = freq_to_map(stats->ngrams[0]);
-    top_keys = get_side_keys(lfc, lfl, ciphertext, bound, ngrams_count, cmp_lett);
-    bottom_keys = get_side_keys(lfc, lfl, ciphertext, bound, ngrams_count, cmp_lett_desc);
+    top_keys = get_side_keys(lfc, lfl, ciphertext, n, ngrams_count, cmp_lett);
+    bottom_keys = get_side_keys(lfc, lfl, ciphertext, n, ngrams_count, cmp_lett_desc);
     char *keys = strintersection(top_keys, bottom_keys);
     size_t inter_count = strlen(keys);
     if (inter_count == 0) {

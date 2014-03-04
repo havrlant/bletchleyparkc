@@ -11,6 +11,17 @@
 		E102CFC718BA3C2000813519 /* run_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = E102CFC618BA3C2000813519 /* run_tests.c */; };
 		E102CFCC18BA45B900813519 /* unittest.c in Sources */ = {isa = PBXBuildFile; fileRef = E102CFCB18BA45B900813519 /* unittest.c */; };
 		E102CFCE18BBD3A600813519 /* utilities_tests.c in Sources */ = {isa = PBXBuildFile; fileRef = E102CFCD18BBD3A600813519 /* utilities_tests.c */; };
+		E10747D918C5FE2400183F71 /* comb-util.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747C218C5FE2400183F71 /* comb-util.c */; };
+		E10747DA18C5FE2400183F71 /* combination.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747C418C5FE2400183F71 /* combination.c */; };
+		E10747DB18C5FE2400183F71 /* k-permutation.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747C618C5FE2400183F71 /* k-permutation.c */; };
+		E10747DC18C5FE2400183F71 /* multicombination.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747C918C5FE2400183F71 /* multicombination.c */; };
+		E10747DD18C5FE2400183F71 /* multiset-combination.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747CB18C5FE2400183F71 /* multiset-combination.c */; };
+		E10747DE18C5FE2400183F71 /* multiset-subset.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747CD18C5FE2400183F71 /* multiset-subset.c */; };
+		E10747DF18C5FE2400183F71 /* n-tuple.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747CF18C5FE2400183F71 /* n-tuple.c */; };
+		E10747E018C5FE2400183F71 /* partition.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747D118C5FE2400183F71 /* partition.c */; };
+		E10747E118C5FE2400183F71 /* permutation.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747D318C5FE2400183F71 /* permutation.c */; };
+		E10747E218C5FE2400183F71 /* subset-subset.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747D518C5FE2400183F71 /* subset-subset.c */; };
+		E10747E318C5FE2400183F71 /* subset.c in Sources */ = {isa = PBXBuildFile; fileRef = E10747D718C5FE2400183F71 /* subset.c */; };
 		E12EE38118B91D040029BBF5 /* statistics.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38018B91D040029BBF5 /* statistics.c */; };
 		E12EE38518B942760029BBF5 /* ciphers_generators.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38418B942760029BBF5 /* ciphers_generators.c */; };
 		E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */ = {isa = PBXBuildFile; fileRef = E12EE38718B948270029BBF5 /* caesar_brute.c */; };
@@ -65,6 +76,29 @@
 		E102CFCB18BA45B900813519 /* unittest.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unittest.c; sourceTree = "<group>"; };
 		E102CFCD18BBD3A600813519 /* utilities_tests.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = utilities_tests.c; sourceTree = "<group>"; };
 		E102CFCF18BBD3BE00813519 /* utilities_tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilities_tests.h; sourceTree = "<group>"; };
+		E10747C218C5FE2400183F71 /* comb-util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "comb-util.c"; sourceTree = "<group>"; };
+		E10747C318C5FE2400183F71 /* comb-util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "comb-util.h"; sourceTree = "<group>"; };
+		E10747C418C5FE2400183F71 /* combination.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = combination.c; sourceTree = "<group>"; };
+		E10747C518C5FE2400183F71 /* combination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = combination.h; sourceTree = "<group>"; };
+		E10747C618C5FE2400183F71 /* k-permutation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "k-permutation.c"; sourceTree = "<group>"; };
+		E10747C718C5FE2400183F71 /* k-permutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "k-permutation.h"; sourceTree = "<group>"; };
+		E10747C818C5FE2400183F71 /* mbcommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mbcommon.h; sourceTree = "<group>"; };
+		E10747C918C5FE2400183F71 /* multicombination.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = multicombination.c; sourceTree = "<group>"; };
+		E10747CA18C5FE2400183F71 /* multicombination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = multicombination.h; sourceTree = "<group>"; };
+		E10747CB18C5FE2400183F71 /* multiset-combination.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "multiset-combination.c"; sourceTree = "<group>"; };
+		E10747CC18C5FE2400183F71 /* multiset-combination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "multiset-combination.h"; sourceTree = "<group>"; };
+		E10747CD18C5FE2400183F71 /* multiset-subset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "multiset-subset.c"; sourceTree = "<group>"; };
+		E10747CE18C5FE2400183F71 /* multiset-subset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "multiset-subset.h"; sourceTree = "<group>"; };
+		E10747CF18C5FE2400183F71 /* n-tuple.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "n-tuple.c"; sourceTree = "<group>"; };
+		E10747D018C5FE2400183F71 /* n-tuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "n-tuple.h"; sourceTree = "<group>"; };
+		E10747D118C5FE2400183F71 /* partition.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = partition.c; sourceTree = "<group>"; };
+		E10747D218C5FE2400183F71 /* partition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = partition.h; sourceTree = "<group>"; };
+		E10747D318C5FE2400183F71 /* permutation.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = permutation.c; sourceTree = "<group>"; };
+		E10747D418C5FE2400183F71 /* permutation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = permutation.h; sourceTree = "<group>"; };
+		E10747D518C5FE2400183F71 /* subset-subset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "subset-subset.c"; sourceTree = "<group>"; };
+		E10747D618C5FE2400183F71 /* subset-subset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "subset-subset.h"; sourceTree = "<group>"; };
+		E10747D718C5FE2400183F71 /* subset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = subset.c; sourceTree = "<group>"; };
+		E10747D818C5FE2400183F71 /* subset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = subset.h; sourceTree = "<group>"; };
 		E12EE38018B91D040029BBF5 /* statistics.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = statistics.c; sourceTree = "<group>"; };
 		E12EE38218B91D130029BBF5 /* statitics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = statitics.h; sourceTree = "<group>"; };
 		E12EE38418B942760029BBF5 /* ciphers_generators.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; lineEnding = 0; path = ciphers_generators.c; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
@@ -148,10 +182,41 @@
 		E102CFC918BA454C00813519 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				E10747C118C5FDED00183F71 /* comb */,
 				E102CFCA18BA459400813519 /* unittest.h */,
 				E102CFCB18BA45B900813519 /* unittest.c */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		E10747C118C5FDED00183F71 /* comb */ = {
+			isa = PBXGroup;
+			children = (
+				E10747C218C5FE2400183F71 /* comb-util.c */,
+				E10747C318C5FE2400183F71 /* comb-util.h */,
+				E10747C418C5FE2400183F71 /* combination.c */,
+				E10747C518C5FE2400183F71 /* combination.h */,
+				E10747C618C5FE2400183F71 /* k-permutation.c */,
+				E10747C718C5FE2400183F71 /* k-permutation.h */,
+				E10747C818C5FE2400183F71 /* mbcommon.h */,
+				E10747C918C5FE2400183F71 /* multicombination.c */,
+				E10747CA18C5FE2400183F71 /* multicombination.h */,
+				E10747CB18C5FE2400183F71 /* multiset-combination.c */,
+				E10747CC18C5FE2400183F71 /* multiset-combination.h */,
+				E10747CD18C5FE2400183F71 /* multiset-subset.c */,
+				E10747CE18C5FE2400183F71 /* multiset-subset.h */,
+				E10747CF18C5FE2400183F71 /* n-tuple.c */,
+				E10747D018C5FE2400183F71 /* n-tuple.h */,
+				E10747D118C5FE2400183F71 /* partition.c */,
+				E10747D218C5FE2400183F71 /* partition.h */,
+				E10747D318C5FE2400183F71 /* permutation.c */,
+				E10747D418C5FE2400183F71 /* permutation.h */,
+				E10747D518C5FE2400183F71 /* subset-subset.c */,
+				E10747D618C5FE2400183F71 /* subset-subset.h */,
+				E10747D718C5FE2400183F71 /* subset.c */,
+				E10747D818C5FE2400183F71 /* subset.h */,
+			);
+			path = comb;
 			sourceTree = "<group>";
 		};
 		E12EE38318B923D60029BBF5 /* cryptanalysis */ = {
@@ -338,28 +403,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10747DB18C5FE2400183F71 /* k-permutation.c in Sources */,
+				E10747E218C5FE2400183F71 /* subset-subset.c in Sources */,
 				E190768F18B8BD9F0082E443 /* vigenere.c in Sources */,
 				E190768518B8BD990082E443 /* ospath.c in Sources */,
 				E12EE38518B942760029BBF5 /* ciphers_generators.c in Sources */,
 				E190768218B8BD990082E443 /* constants.c in Sources */,
 				E190768618B8BD990082E443 /* stringext.c in Sources */,
+				E10747E118C5FE2400183F71 /* permutation.c in Sources */,
 				E12EE38118B91D040029BBF5 /* statistics.c in Sources */,
 				E190768E18B8BD9F0082E443 /* substitution.c in Sources */,
 				E1FC9DD518BC026C00B20411 /* triangle_attack.c in Sources */,
 				E12EE38818B948270029BBF5 /* caesar_brute.c in Sources */,
 				E190767418B8BD920082E443 /* frequency.c in Sources */,
 				E190768D18B8BD9F0082E443 /* caesar.c in Sources */,
+				E10747E318C5FE2400183F71 /* subset.c in Sources */,
 				E1DF85E218BBF3610049654A /* cryptanalysis.c in Sources */,
 				E190767518B8BD920082E443 /* topwords.c in Sources */,
+				E10747DF18C5FE2400183F71 /* n-tuple.c in Sources */,
 				E102CFCC18BA45B900813519 /* unittest.c in Sources */,
 				E190768418B8BD990082E443 /* osext.c in Sources */,
 				E1DF85DF18BBDA200049654A /* datamining_tests.c in Sources */,
 				E102CFC218BA388400813519 /* ciphers_test.c in Sources */,
+				E10747DE18C5FE2400183F71 /* multiset-subset.c in Sources */,
 				E190768318B8BD990082E443 /* files.c in Sources */,
 				E1FC9DD818BCDC5200B20411 /* utils.c in Sources */,
+				E10747E018C5FE2400183F71 /* partition.c in Sources */,
 				E190764018B8ACF00082E443 /* main.c in Sources */,
+				E10747DC18C5FE2400183F71 /* multicombination.c in Sources */,
 				E102CFC718BA3C2000813519 /* run_tests.c in Sources */,
+				E10747DA18C5FE2400183F71 /* combination.c in Sources */,
+				E10747D918C5FE2400183F71 /* comb-util.c in Sources */,
 				E190768118B8BD990082E443 /* arrayext.c in Sources */,
+				E10747DD18C5FE2400183F71 /* multiset-combination.c in Sources */,
 				E102CFCE18BBD3A600813519 /* utilities_tests.c in Sources */,
 				E1FC9DDB18BCFA7100B20411 /* vigenere_brute.c in Sources */,
 			);
