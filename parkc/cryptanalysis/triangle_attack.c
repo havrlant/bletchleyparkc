@@ -57,7 +57,7 @@ static uint64_t lang_distances(LetterFreq *lc, unsigned int k) {
     return char_distances(lc, mask, k);
 }
 
-static void find_keys(LetterFreq *lfc, LetterFreq *lfl, char *keys, uint64_t lang_dist, int k, int n) {
+static void find_keys(LetterFreq *lfc, LetterFreq *lfl, char *keys, uint64_t lang_dist, int n, int k) {
     unsigned int mask[k];
     init_perm_array(mask, k);
     char key;
@@ -78,12 +78,12 @@ static void find_keys(LetterFreq *lfc, LetterFreq *lfl, char *keys, uint64_t lan
     }
 }
 
-static char *get_side_keys(LetterFreq *lfc, LetterFreq *lfl, const char *ciphertext, int n, int ngrams_count, int (*compar)(const void*, const void*)) {
+static char *get_side_keys(LetterFreq *lfc, LetterFreq *lfl, const char *ciphertext, int n, int k, int (*compar)(const void*, const void*)) {
     char *keys = (char*) safe_calloc(ALPHABET_LENGTH + 1, sizeof(char));
     qsort(lfc, ALPHABET_LENGTH, sizeof(LetterFreq), compar);
     qsort(lfl, ALPHABET_LENGTH, sizeof(LetterFreq), compar);
-    uint64_t lang_diff = lang_distances(lfl, 3);
-    find_keys(lfc, lfl, keys, lang_diff, 3, n);
+    uint64_t lang_diff = lang_distances(lfl, k);
+    find_keys(lfc, lfl, keys, lang_diff, n, k);
     return keys;
 }
 
@@ -120,12 +120,12 @@ static char *strunion(char *str1, char *str2) {
     return sunion;
 }
 
-char* get_possible_keys(const char *ciphertext, const LangStats *stats, int n, int ngrams_count) {
+char* get_possible_keys(const char *ciphertext, const LangStats *stats, int n, int k) {
     char *top_keys, *bottom_keys;
     LetterFreq *lfc = get_letters_occurences(ciphertext);
     LetterFreq *lfl = freq_to_map(stats->ngrams[0]);
-    top_keys = get_side_keys(lfc, lfl, ciphertext, n, ngrams_count, cmp_lett);
-    bottom_keys = get_side_keys(lfc, lfl, ciphertext, n, ngrams_count, cmp_lett_desc);
+    top_keys = get_side_keys(lfc, lfl, ciphertext, n, k, cmp_lett);
+    bottom_keys = get_side_keys(lfc, lfl, ciphertext, n, k, cmp_lett_desc);
     char *keys = strintersection(top_keys, bottom_keys);
     size_t inter_count = strlen(keys);
     if (inter_count == 0) {
@@ -148,9 +148,9 @@ char** convert_to_classical_keys(const char *keys) {
     return new_keys;
 }
 
-Keytext triangle_attack(const char *ciphertext, const LangStats *stats, int bound, int ngrams_count) {
-    const char *keys = get_possible_keys(ciphertext, stats, bound, ngrams_count);
+Keytext triangle_attack(const char *ciphertext, const LangStats *stats, int n, int k) {
+    const char *keys = get_possible_keys(ciphertext, stats, n, k);
     char **classical_keys = convert_to_classical_keys(keys);
     TextGenerator generator = get_generator(ciphertext, classical_keys, strlen(keys), caesar_decrypt_par);
-    return best_match(generator, stats, ngrams_count);
+    return best_match(generator, stats, 2);
 }

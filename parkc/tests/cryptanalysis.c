@@ -18,11 +18,11 @@ static void test_triangle_attack() {
     for (int i = 0; i < ALPHABET_LENGTH; i++) {
         key[0] = 'a' + i;
         caesar_encrypt_par(opentext, key, ciphertext);
-        keytext = triangle_attack(ciphertext, stats, 6, 1);
+        keytext = triangle_attack(ciphertext, stats, 6, 3);
         assert_str(key, keytext.key);
     }
     
-    keytext = triangle_attack("asdfg", stats, 3, 1);
+    keytext = triangle_attack("asdfg", stats, 3, 3);
     assert_str("?", keytext.key);
     assert_str("", keytext.text);
 }

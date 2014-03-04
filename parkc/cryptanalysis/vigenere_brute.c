@@ -16,7 +16,7 @@ char *get_key(const char *ciphertext, const LangStats *stats, int keylen) {
     Keytext current_key;
     for (int i = 0; i < keylen; i++) {
         every_n_char(ciphertext, i, keylen, output);
-        current_key = triangle_attack(output, stats, 8, 1);
+        current_key = triangle_attack(output, stats, 8, 3);
         key[i] = current_key.key[0];
         if (key[i] == '?') {
             key[i] = 'a';
