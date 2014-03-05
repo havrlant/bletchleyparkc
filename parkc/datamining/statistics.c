@@ -32,7 +32,6 @@ LangStats *default_stats(const char *lang) {
     double** ngrams = load_frequencies(lang);
     StringArray *topwords = load_topwords(lang);
     return create_stats(ngrams, topwords);
-    
 }
 
 Keytext best_match(TextGenerator generate, const LangStats *stats, int ngrams_count) {

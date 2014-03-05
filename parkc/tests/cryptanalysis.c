@@ -5,7 +5,7 @@ static void test_caesar_brute() {
     sarray->items = (char*[]){"stok"};
     LangStats *stats = create_stats((double**)TEST_NGRAMS, sarray);
     char *ciphertext = "ijezycluijydkiutuijudodqplhqtbusxfeluijdosxichjyphqtskjqtojutaedsyfeibutdyaheaoteifydoijefudosxzuxelyijkpuliusxijhqdlqbyiucqioletoteijhutksuhduilqjodufqdqpubupdufuabefbqcudk";
-    Keytext ktext = caesar_crack(ciphertext, stats, 1);
+    Keytext ktext = caesar_ngrams_crack(ciphertext, stats, 1);
     assert_str("q", ktext.key);
 }
 
